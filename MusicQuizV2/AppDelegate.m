@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
+#import "FirstTimeViewController.h"
+
+#define redInterfaceColor [UIColor colorWithRed:1 green:0.231 blue:0.188 alpha:1];
 
 @implementation AppDelegate
 
@@ -16,6 +20,24 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hasSeenTutorial"]) {
+        
+        // It's the first time the User Opens the App
+        FirstTimeViewController *firstVC = [[FirstTimeViewController alloc] initWithNibName:@"FirstTimeViewController" bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:firstVC];
+        [self.window setRootViewController:nav];
+        
+    } else {
+        // It's not the first time the User Opens the App
+        HomeViewController *homeVC = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+        [self.window setRootViewController:nav];
+    }
+    
+    // Multiplayer Handler
+    self.multiplayerHandler = [[MQMultiplayerHandler alloc] init];
+    
     return YES;
 }
 

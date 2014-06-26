@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C39FD845-AA05-4BA9-B5EF-1A2AED0DFC18</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MusicQuizV2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C31BF7AF-5F3E-4C58-BE13-81EB28F5F549</key>
+		<string>https://github.com/Hero93/MusicQuiz.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MusicQuizV2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C31BF7AF-5F3E-4C58-BE13-81EB28F5F549</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Hero93/MusicQuiz.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C31BF7AF-5F3E-4C58-BE13-81EB28F5F549</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C31BF7AF-5F3E-4C58-BE13-81EB28F5F549</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MusicQuizV2</string>
+		</dict>
+	</array>
+</dict>
+</plist>

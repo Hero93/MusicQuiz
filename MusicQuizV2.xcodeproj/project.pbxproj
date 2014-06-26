@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B019AD2194DEC4A0077280E /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B019AD0194DEC4A0077280E /* MultiplayerViewController.m */; };
+		4B019AD3194DEC4A0077280E /* MultiplayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B019AD1194DEC4A0077280E /* MultiplayerViewController.xib */; };
+		4B159D8C1927C48F00A15063 /* musicQuizLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B159D8B1927C48F00A15063 /* musicQuizLogo.png */; };
+		4B24E9F01922ADB900043EA5 /* MusicQuiz.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B24E9EF1922ADB900043EA5 /* MusicQuiz.png */; };
+		4B24E9F41922AE6500043EA5 /* MatchModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B24E9F21922AE6500043EA5 /* MatchModeViewController.m */; };
+		4B24E9F51922AE6500043EA5 /* MatchModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B24E9F31922AE6500043EA5 /* MatchModeViewController.xib */; };
+		4B694DB8195CD2FB000BFAFE /* UIColor+MusicQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B694DB7195CD2FB000BFAFE /* UIColor+MusicQuiz.m */; };
+		4B6AA136192650A100F815A4 /* backgroundTimerX2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B6AA135192650A000F815A4 /* backgroundTimerX2.png */; };
+		4B6DBD86194F8D340035FF06 /* UIFont+MusicQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6DBD85194F8D340035FF06 /* UIFont+MusicQuiz.m */; };
+		4B80D284194DE49200677723 /* GuestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B80D282194DE49200677723 /* GuestViewController.xib */; };
+		4B80D28B194DE4C100677723 /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B80D289194DE4C100677723 /* HostViewController.xib */; };
+		4BAE7C0E1929505D00C7FDDE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE7C0C1929505D00C7FDDE /* HomeViewController.m */; };
+		4BAE7C0F1929505D00C7FDDE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C0D1929505D00C7FDDE /* HomeViewController.xib */; };
+		4BAE7C111929513700C7FDDE /* GiocaButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C101929513700C7FDDE /* GiocaButton.png */; };
+		4BAE7C131929527900C7FDDE /* LogoApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C121929527900C7FDDE /* LogoApp.png */; };
+		4BAE7C151929550700C7FDDE /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C141929550700C7FDDE /* logo2.png */; };
+		4BAE7C1A192956C200C7FDDE /* EndMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE7C18192956C200C7FDDE /* EndMatchViewController.m */; };
+		4BAE7C1B192956C200C7FDDE /* EndMatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C19192956C200C7FDDE /* EndMatchViewController.xib */; };
+		4BAE7C1D19295FA200C7FDDE /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C1C19295FA200C7FDDE /* note.png */; };
+		4BC34B4D19241851005AA36A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BC34B4C1924151C005AA36A /* Montserrat-Regular.ttf */; };
+		4BC34B4E19241854005AA36A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BC34B4B19241516005AA36A /* Montserrat-Bold.ttf */; };
+		4BCB144C194DD22700C78B8A /* GameModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB144A194DD22700C78B8A /* GameModeViewController.m */; };
+		4BCB144D194DD22700C78B8A /* GameModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB144B194DD22700C78B8A /* GameModeViewController.xib */; };
+		4BCF2D291931EBAC00667D61 /* FirstTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCF2D271931EBAC00667D61 /* FirstTimeViewController.m */; };
+		4BCF2D2A1931EBAC00667D61 /* FirstTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BCF2D281931EBAC00667D61 /* FirstTimeViewController.xib */; };
+		4BCF2D2D1931EFDB00667D61 /* logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BCF2D2C1931EFDB00667D61 /* logo3.png */; };
+		4BCF2D3319325B6500667D61 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BCF2D3219325B6500667D61 /* settings.png */; };
 		4BCF570D191A1BAE00454799 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCF570C191A1BAE00454799 /* Foundation.framework */; };
 		4BCF570F191A1BAE00454799 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCF570E191A1BAE00454799 /* CoreGraphics.framework */; };
 		4BCF5711191A1BAE00454799 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCF5710191A1BAE00454799 /* UIKit.framework */; };
@@ -19,6 +46,15 @@
 		4BCF5728191A1BAE00454799 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCF5710191A1BAE00454799 /* UIKit.framework */; };
 		4BCF5730191A1BAE00454799 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BCF572E191A1BAE00454799 /* InfoPlist.strings */; };
 		4BCF5732191A1BAE00454799 /* MusicQuizV2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCF5731191A1BAE00454799 /* MusicQuizV2Tests.m */; };
+		4BCF573D191A1C0600454799 /* MusicQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCF573C191A1C0600454799 /* MusicQuestion.m */; };
+		4BCF573F191A1F0A00454799 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCF573E191A1F0A00454799 /* MediaPlayer.framework */; };
+		4BCF5742191A224B00454799 /* MusicQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCF5741191A224B00454799 /* MusicQuiz.m */; };
+		4BCF5746191A392900454799 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCF5744191A392900454799 /* MatchViewController.m */; };
+		4BCF5747191A392900454799 /* MatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BCF5745191A392900454799 /* MatchViewController.xib */; };
+		4BDB70C7195CD80D005B314B /* no-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDB70C6195CD80D005B314B /* no-cover.png */; };
+		4BDEDB7419585EA00015F1FA /* MQMultiplayerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEDB7319585EA00015F1FA /* MQMultiplayerHandler.m */; };
+		4BDEDB78195862CD0015F1FA /* MultiplayerOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEDB76195862CD0015F1FA /* MultiplayerOptionsViewController.m */; };
+		4BDEDB79195862CD0015F1FA /* MultiplayerOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDEDB77195862CD0015F1FA /* MultiplayerOptionsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +68,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B019ACF194DEC4A0077280E /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
+		4B019AD0194DEC4A0077280E /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
+		4B019AD1194DEC4A0077280E /* MultiplayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplayerViewController.xib; sourceTree = "<group>"; };
+		4B159D8B1927C48F00A15063 /* musicQuizLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicQuizLogo.png; sourceTree = "<group>"; };
+		4B24E9EF1922ADB900043EA5 /* MusicQuiz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MusicQuiz.png; path = ../MusicQuiz.png; sourceTree = "<group>"; };
+		4B24E9F11922AE6500043EA5 /* MatchModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchModeViewController.h; sourceTree = "<group>"; };
+		4B24E9F21922AE6500043EA5 /* MatchModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchModeViewController.m; sourceTree = "<group>"; };
+		4B24E9F31922AE6500043EA5 /* MatchModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchModeViewController.xib; sourceTree = "<group>"; };
+		4B694DB6195CD2FB000BFAFE /* UIColor+MusicQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+MusicQuiz.h"; path = "../UIColor+MusicQuiz.h"; sourceTree = "<group>"; };
+		4B694DB7195CD2FB000BFAFE /* UIColor+MusicQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MusicQuiz.m"; path = "../UIColor+MusicQuiz.m"; sourceTree = "<group>"; };
+		4B6AA135192650A000F815A4 /* backgroundTimerX2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTimerX2.png; sourceTree = "<group>"; };
+		4B6DBD84194F8D340035FF06 /* UIFont+MusicQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+MusicQuiz.h"; path = "../UIFont+MusicQuiz.h"; sourceTree = "<group>"; };
+		4B6DBD85194F8D340035FF06 /* UIFont+MusicQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MusicQuiz.m"; path = "../UIFont+MusicQuiz.m"; sourceTree = "<group>"; };
+		4B80D282194DE49200677723 /* GuestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuestViewController.xib; sourceTree = "<group>"; };
+		4B80D289194DE4C100677723 /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HostViewController.xib; sourceTree = "<group>"; };
+		4BAE7C0B1929505D00C7FDDE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4BAE7C0C1929505D00C7FDDE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4BAE7C0D1929505D00C7FDDE /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4BAE7C101929513700C7FDDE /* GiocaButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GiocaButton.png; sourceTree = "<group>"; };
+		4BAE7C121929527900C7FDDE /* LogoApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoApp.png; sourceTree = "<group>"; };
+		4BAE7C141929550700C7FDDE /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
+		4BAE7C17192956C200C7FDDE /* EndMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndMatchViewController.h; sourceTree = "<group>"; };
+		4BAE7C18192956C200C7FDDE /* EndMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndMatchViewController.m; sourceTree = "<group>"; };
+		4BAE7C19192956C200C7FDDE /* EndMatchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EndMatchViewController.xib; sourceTree = "<group>"; };
+		4BAE7C1C19295FA200C7FDDE /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		4BC34B4B19241516005AA36A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		4BC34B4C1924151C005AA36A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		4BCB1449194DD22700C78B8A /* GameModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeViewController.h; sourceTree = "<group>"; };
+		4BCB144A194DD22700C78B8A /* GameModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModeViewController.m; sourceTree = "<group>"; };
+		4BCB144B194DD22700C78B8A /* GameModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameModeViewController.xib; sourceTree = "<group>"; };
+		4BCF2D261931EBAC00667D61 /* FirstTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTimeViewController.h; sourceTree = "<group>"; };
+		4BCF2D271931EBAC00667D61 /* FirstTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTimeViewController.m; sourceTree = "<group>"; };
+		4BCF2D281931EBAC00667D61 /* FirstTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstTimeViewController.xib; sourceTree = "<group>"; };
+		4BCF2D2C1931EFDB00667D61 /* logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo3.png; sourceTree = "<group>"; };
+		4BCF2D3219325B6500667D61 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		4BCF5709191A1BAE00454799 /* MusicQuizV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicQuizV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BCF570C191A1BAE00454799 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BCF570E191A1BAE00454799 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +119,20 @@
 		4BCF572D191A1BAE00454799 /* MusicQuizV2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicQuizV2Tests-Info.plist"; sourceTree = "<group>"; };
 		4BCF572F191A1BAE00454799 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BCF5731191A1BAE00454799 /* MusicQuizV2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicQuizV2Tests.m; sourceTree = "<group>"; };
+		4BCF573B191A1C0600454799 /* MusicQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicQuestion.h; path = ../MusicQuestion.h; sourceTree = "<group>"; };
+		4BCF573C191A1C0600454799 /* MusicQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicQuestion.m; path = ../MusicQuestion.m; sourceTree = "<group>"; };
+		4BCF573E191A1F0A00454799 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4BCF5740191A224B00454799 /* MusicQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicQuiz.h; sourceTree = "<group>"; };
+		4BCF5741191A224B00454799 /* MusicQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicQuiz.m; sourceTree = "<group>"; };
+		4BCF5743191A392900454799 /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
+		4BCF5744191A392900454799 /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
+		4BCF5745191A392900454799 /* MatchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchViewController.xib; sourceTree = "<group>"; };
+		4BDB70C6195CD80D005B314B /* no-cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-cover.png"; sourceTree = "<group>"; };
+		4BDEDB7219585EA00015F1FA /* MQMultiplayerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MQMultiplayerHandler.h; path = ../MQMultiplayerHandler.h; sourceTree = "<group>"; };
+		4BDEDB7319585EA00015F1FA /* MQMultiplayerHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MQMultiplayerHandler.m; path = ../MQMultiplayerHandler.m; sourceTree = "<group>"; };
+		4BDEDB75195862CD0015F1FA /* MultiplayerOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerOptionsViewController.h; sourceTree = "<group>"; };
+		4BDEDB76195862CD0015F1FA /* MultiplayerOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerOptionsViewController.m; sourceTree = "<group>"; };
+		4BDEDB77195862CD0015F1FA /* MultiplayerOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplayerOptionsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BCF573F191A1F0A00454799 /* MediaPlayer.framework in Frameworks */,
 				4BCF570F191A1BAE00454799 /* CoreGraphics.framework in Frameworks */,
 				4BCF5711191A1BAE00454799 /* UIKit.framework in Frameworks */,
 				4BCF570D191A1BAE00454799 /* Foundation.framework in Frameworks */,
@@ -74,6 +160,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B019AD5194DED580077280E /* Singleplayer */ = {
+			isa = PBXGroup;
+			children = (
+				4BCF5743191A392900454799 /* MatchViewController.h */,
+				4BCF5744191A392900454799 /* MatchViewController.m */,
+			);
+			name = Singleplayer;
+			sourceTree = "<group>";
+		};
+		4B019AD6194DED810077280E /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				4B019ACF194DEC4A0077280E /* MultiplayerViewController.h */,
+				4B019AD0194DEC4A0077280E /* MultiplayerViewController.m */,
+				4BDEDB75195862CD0015F1FA /* MultiplayerOptionsViewController.h */,
+				4BDEDB76195862CD0015F1FA /* MultiplayerOptionsViewController.m */,
+			);
+			name = Multiplayer;
+			sourceTree = "<group>";
+		};
+		4B24E9F61922AE6C00043EA5 /* Match Mode */ = {
+			isa = PBXGroup;
+			children = (
+				4B24E9F11922AE6500043EA5 /* MatchModeViewController.h */,
+				4B24E9F21922AE6500043EA5 /* MatchModeViewController.m */,
+			);
+			name = "Match Mode";
+			sourceTree = "<group>";
+		};
+		4B6AA137192666AF00F815A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BDB70C6195CD80D005B314B /* no-cover.png */,
+				4BCF2D3219325B6500667D61 /* settings.png */,
+				4BCF2D2C1931EFDB00667D61 /* logo3.png */,
+				4BAE7C121929527900C7FDDE /* LogoApp.png */,
+				4BAE7C101929513700C7FDDE /* GiocaButton.png */,
+				4B159D8B1927C48F00A15063 /* musicQuizLogo.png */,
+				4BAE7C141929550700C7FDDE /* logo2.png */,
+				4B6AA135192650A000F815A4 /* backgroundTimerX2.png */,
+				4BC34B4B19241516005AA36A /* Montserrat-Bold.ttf */,
+				4BC34B4C1924151C005AA36A /* Montserrat-Regular.ttf */,
+				4B24E9EF1922ADB900043EA5 /* MusicQuiz.png */,
+				4BAE7C1C19295FA200C7FDDE /* note.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4BAE7C0A1929504D00C7FDDE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE7C0B1929505D00C7FDDE /* HomeViewController.h */,
+				4BAE7C0C1929505D00C7FDDE /* HomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		4BAE7C16192955F600C7FDDE /* EndMatch */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE7C17192956C200C7FDDE /* EndMatchViewController.h */,
+				4BAE7C18192956C200C7FDDE /* EndMatchViewController.m */,
+			);
+			name = EndMatch;
+			sourceTree = "<group>";
+		};
+		4BCB144E194DD23800C78B8A /* Game Mode */ = {
+			isa = PBXGroup;
+			children = (
+				4BCB1449194DD22700C78B8A /* GameModeViewController.h */,
+				4BCB144A194DD22700C78B8A /* GameModeViewController.m */,
+				4B019AD6194DED810077280E /* Multiplayer */,
+				4B019AD5194DED580077280E /* Singleplayer */,
+			);
+			name = "Game Mode";
+			sourceTree = "<group>";
+		};
+		4BCF2D2B1931EBB600667D61 /* First Time */ = {
+			isa = PBXGroup;
+			children = (
+				4BCF2D261931EBAC00667D61 /* FirstTimeViewController.h */,
+				4BCF2D271931EBAC00667D61 /* FirstTimeViewController.m */,
+			);
+			name = "First Time";
+			sourceTree = "<group>";
+		};
 		4BCF5700191A1BAE00454799 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +268,7 @@
 		4BCF570B191A1BAE00454799 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BCF573E191A1F0A00454799 /* MediaPlayer.framework */,
 				4BCF570C191A1BAE00454799 /* Foundation.framework */,
 				4BCF570E191A1BAE00454799 /* CoreGraphics.framework */,
 				4BCF5710191A1BAE00454799 /* UIKit.framework */,
@@ -107,8 +280,14 @@
 		4BCF5712191A1BAE00454799 /* MusicQuizV2 */ = {
 			isa = PBXGroup;
 			children = (
-				4BCF571B191A1BAE00454799 /* AppDelegate.h */,
-				4BCF571C191A1BAE00454799 /* AppDelegate.m */,
+				4B694DB6195CD2FB000BFAFE /* UIColor+MusicQuiz.h */,
+				4B694DB7195CD2FB000BFAFE /* UIColor+MusicQuiz.m */,
+				4B6DBD84194F8D340035FF06 /* UIFont+MusicQuiz.h */,
+				4B6DBD85194F8D340035FF06 /* UIFont+MusicQuiz.m */,
+				4B6AA137192666AF00F815A4 /* Resources */,
+				4BCF5748191A3C9000454799 /* Model */,
+				4BCF574A191A3CB800454799 /* View */,
+				4BCF5749191A3CA700454799 /* Controller */,
 				4BCF571E191A1BAE00454799 /* Images.xcassets */,
 				4BCF5713191A1BAE00454799 /* Supporting Files */,
 			);
@@ -118,6 +297,8 @@
 		4BCF5713191A1BAE00454799 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4BCF571B191A1BAE00454799 /* AppDelegate.h */,
+				4BCF571C191A1BAE00454799 /* AppDelegate.m */,
 				4BCF5714191A1BAE00454799 /* MusicQuizV2-Info.plist */,
 				4BCF5715191A1BAE00454799 /* InfoPlist.strings */,
 				4BCF5718191A1BAE00454799 /* main.m */,
@@ -142,6 +323,72 @@
 				4BCF572E191A1BAE00454799 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BCF5748191A3C9000454799 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4BDB70C3195CCC40005B314B /* Multiplayer */,
+				4BCF574C191A3FF600454799 /* Quiz */,
+				4BCF574B191A3FE400454799 /* Question */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4BCF5749191A3CA700454799 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4BCF2D2B1931EBB600667D61 /* First Time */,
+				4BAE7C0A1929504D00C7FDDE /* Home */,
+				4BCB144E194DD23800C78B8A /* Game Mode */,
+				4B24E9F61922AE6C00043EA5 /* Match Mode */,
+				4BAE7C16192955F600C7FDDE /* EndMatch */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4BCF574A191A3CB800454799 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B80D289194DE4C100677723 /* HostViewController.xib */,
+				4B80D282194DE49200677723 /* GuestViewController.xib */,
+				4BCF2D281931EBAC00667D61 /* FirstTimeViewController.xib */,
+				4BAE7C0D1929505D00C7FDDE /* HomeViewController.xib */,
+				4BCB144B194DD22700C78B8A /* GameModeViewController.xib */,
+				4B24E9F31922AE6500043EA5 /* MatchModeViewController.xib */,
+				4BCF5745191A392900454799 /* MatchViewController.xib */,
+				4BAE7C19192956C200C7FDDE /* EndMatchViewController.xib */,
+				4B019AD1194DEC4A0077280E /* MultiplayerViewController.xib */,
+				4BDEDB77195862CD0015F1FA /* MultiplayerOptionsViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4BCF574B191A3FE400454799 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				4BCF573B191A1C0600454799 /* MusicQuestion.h */,
+				4BCF573C191A1C0600454799 /* MusicQuestion.m */,
+			);
+			name = Question;
+			sourceTree = "<group>";
+		};
+		4BCF574C191A3FF600454799 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				4BCF5740191A224B00454799 /* MusicQuiz.h */,
+				4BCF5741191A224B00454799 /* MusicQuiz.m */,
+			);
+			name = Quiz;
+			sourceTree = "<group>";
+		};
+		4BDB70C3195CCC40005B314B /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				4BDEDB7219585EA00015F1FA /* MQMultiplayerHandler.h */,
+				4BDEDB7319585EA00015F1FA /* MQMultiplayerHandler.m */,
+			);
+			name = Multiplayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +466,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC34B4D19241851005AA36A /* Montserrat-Regular.ttf in Resources */,
+				4B80D28B194DE4C100677723 /* HostViewController.xib in Resources */,
+				4BCB144D194DD22700C78B8A /* GameModeViewController.xib in Resources */,
+				4BDEDB79195862CD0015F1FA /* MultiplayerOptionsViewController.xib in Resources */,
+				4B019AD3194DEC4A0077280E /* MultiplayerViewController.xib in Resources */,
+				4BAE7C111929513700C7FDDE /* GiocaButton.png in Resources */,
+				4BCF2D2A1931EBAC00667D61 /* FirstTimeViewController.xib in Resources */,
+				4BCF2D2D1931EFDB00667D61 /* logo3.png in Resources */,
 				4BCF5717191A1BAE00454799 /* InfoPlist.strings in Resources */,
+				4B24E9F51922AE6500043EA5 /* MatchModeViewController.xib in Resources */,
+				4B80D284194DE49200677723 /* GuestViewController.xib in Resources */,
+				4BDB70C7195CD80D005B314B /* no-cover.png in Resources */,
+				4BCF2D3319325B6500667D61 /* settings.png in Resources */,
+				4BAE7C131929527900C7FDDE /* LogoApp.png in Resources */,
+				4B6AA136192650A100F815A4 /* backgroundTimerX2.png in Resources */,
 				4BCF571F191A1BAE00454799 /* Images.xcassets in Resources */,
+				4BAE7C151929550700C7FDDE /* logo2.png in Resources */,
+				4B24E9F01922ADB900043EA5 /* MusicQuiz.png in Resources */,
+				4BCF5747191A392900454799 /* MatchViewController.xib in Resources */,
+				4BAE7C0F1929505D00C7FDDE /* HomeViewController.xib in Resources */,
+				4BAE7C1D19295FA200C7FDDE /* note.png in Resources */,
+				4BC34B4E19241854005AA36A /* Montserrat-Bold.ttf in Resources */,
+				4BAE7C1B192956C200C7FDDE /* EndMatchViewController.xib in Resources */,
+				4B159D8C1927C48F00A15063 /* musicQuizLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +508,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDEDB78195862CD0015F1FA /* MultiplayerOptionsViewController.m in Sources */,
+				4BCF5742191A224B00454799 /* MusicQuiz.m in Sources */,
 				4BCF571D191A1BAE00454799 /* AppDelegate.m in Sources */,
+				4BCF573D191A1C0600454799 /* MusicQuestion.m in Sources */,
+				4BDEDB7419585EA00015F1FA /* MQMultiplayerHandler.m in Sources */,
+				4BCF2D291931EBAC00667D61 /* FirstTimeViewController.m in Sources */,
+				4B24E9F41922AE6500043EA5 /* MatchModeViewController.m in Sources */,
+				4BCF5746191A392900454799 /* MatchViewController.m in Sources */,
+				4BAE7C0E1929505D00C7FDDE /* HomeViewController.m in Sources */,
+				4B694DB8195CD2FB000BFAFE /* UIColor+MusicQuiz.m in Sources */,
+				4BCB144C194DD22700C78B8A /* GameModeViewController.m in Sources */,
+				4BAE7C1A192956C200C7FDDE /* EndMatchViewController.m in Sources */,
 				4BCF5719191A1BAE00454799 /* main.m in Sources */,
+				4B019AD2194DEC4A0077280E /* MultiplayerViewController.m in Sources */,
+				4B6DBD86194F8D340035FF06 /* UIFont+MusicQuiz.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +719,7 @@
 				4BCF5737191A1BAE00454799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BCF5738191A1BAE00454799 /* Build configuration list for PBXNativeTarget "MusicQuizV2Tests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +728,7 @@
 				4BCF573A191A1BAE00454799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
