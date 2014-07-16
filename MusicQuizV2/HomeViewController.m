@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "GameModeViewController.h"
+#import "OptionsViewController.h"
 
 @interface HomeViewController ()
 
@@ -32,6 +33,11 @@
     //NSLog(@"Il tuo nome è %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"UserName"]);
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -41,5 +47,11 @@
 {
     GameModeViewController *gameVC = [[GameModeViewController alloc] initWithNibName:@"GameModeViewController" bundle:nil];
     [self.navigationController pushViewController:gameVC animated:YES];
+}
+
+-(void)lauchOptions:(id)sender
+{
+    OptionsViewController *optionsVC = [[OptionsViewController alloc] initWithNibName:@"OptionsViewController" bundle:nil];
+    [self.navigationController pushViewController:optionsVC animated:YES];
 }
 @end

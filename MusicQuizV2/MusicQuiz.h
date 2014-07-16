@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "MusicQuestion.h"
+#import "MusicQuizModeTypes.h"
 
 @protocol MusicQuizDelegate
 
@@ -23,7 +24,11 @@
 /**
  *  Tells the delegate class that the user answer is wrong
  */
--(void) wrongAnsw;
+-(void) wrongAnswerWithCorrectAnswer:(NSString*)correctAnswer;
+/**
+ *  Tells the delegate class that the user didn't answer the question
+ */
+-(void) noAnswerWithCorrectAnswer:(NSString*)correctAnswer;
 /**
  *  Tells the delegate class that the match is finished
  *
@@ -45,17 +50,17 @@
 
 @property (nonatomic, strong)   NSMutableArray *questions; // of MusicQuestion
 @property (nonatomic)           int type;
-@property (nonatomic)           int score;
+@property (nonatomic)           int incorrectAnswerScore;
+@property (nonatomic)           int correctAnswerScore;
 @property (nonatomic)           int questionDuration;
-@property (nonatomic)           int numberOfQuestion;
+@property (nonatomic)           int numberOfQuestions;
 @property (nonatomic)           int timeTick;
 @property (nonatomic)           int totalScore;
 @property (nonatomic, weak)     MPMediaItem *nowPlayingSong;
 @property (nonatomic, retain)   MPMusicPlayerController *musicPlayer;
 @property (nonatomic, weak)     id <MusicQuizDelegate> delegate;
 
--(instancetype)initWithType:(int)type Score:(int)score QuestionDuration:(int) duration NumberOfQuestion:(int)num;
-
+-(instancetype)initWithType:(enum musicQuizMode)type CorrectAnswerScore:(int)cas IncorrectAnswerScore:(int)ias QuestionDuration:(int)duration NumberOfQuestion:(int)num;
 
 -(void) startQuiz;
 -(void) registerMediaPlayerNotifications;

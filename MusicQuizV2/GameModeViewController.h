@@ -10,6 +10,12 @@
 
 @interface GameModeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *lblGameMode;
+@property (weak, nonatomic) IBOutlet UIButton *btnSinglePlayer;
+@property (weak, nonatomic) IBOutlet UIButton *btnMultiPlayer;
+
+
+
 - (IBAction)playSingleplayer:(UIButton *)sender;
 - (IBAction)playMultiplayer:(UIButton *)sender;
 

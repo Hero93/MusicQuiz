@@ -10,6 +10,8 @@
 #import "MultiplayerOptionsViewController.h"
 #import "MusicQuiz.h"
 #import "AppDelegate.h"
+#import "UIFont+MusicQuiz.h"
+#import "UIColor+MusicQuiz.h"
 
 @interface MultiplayerViewController ()
 
@@ -18,6 +20,11 @@
 
 @property (nonatomic) BOOL hasCreatedGame;
 @property (nonatomic) BOOL isGameRunning;
+
+@property(nonatomic) int currentRound;
+
+@property(nonatomic) int numberOfQuestionStoredValue;
+@property(nonatomic) int questionDurationStoredValue;
 
 @end
 
@@ -39,18 +46,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // AppDelegate Singleton
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
+    // ---- LABELS ----
+    // Current Round Label
+    [self.lblCurrentRound setFont:[UIFont lg_musicQuizFontBoldWithSize:28]];
+    [self.lblCurrentRound setTextColor:[UIColor whiteColor]];
+    
+    // Timer Label
+    [self.lblTimer setFont:[UIFont lg_musicQuizFontRegularWithSize:41]];
+    [self.lblTimer setTextColor:[UIColor musicQuizRed]];
+    
+    // Question Label
+    [self.lblQuestion setFont:[UIFont lg_musicQuizFontBoldWithSize:28]];
+    [self.lblQuestion setTextColor:[UIColor whiteColor]];
+    
+    // ---- BUTTONS ----
+    [self setValue:[UIFont lg_musicQuizFontRegularWithSize:23] forKeyPath:@"btnAnswers.font"];
+    
+    for (UIButton *btn in self.btnAnswers) {
+        btn.tintColor =  [UIColor musicQuizRed];
+    }
+    
+    // HIDE ALL THE STUFF
     self.lblNowPlayingSong.hidden = YES;
     self.lblSongArtist.hidden = YES;
     self.lblSongTitle.hidden = YES;
     self.lblTimer.hidden = YES;
     self.btnBack.hidden = YES;
-
+    self.imgBackgroundTimer.hidden = YES;
+    self.lblCurrentRound.hidden = YES;
+    
     for (UIButton *b in self.btnAnswers) {
         b.hidden = YES;
     }
     
+    // Setting the Notification for the "MusicQuiz_DidReceiveDataNotification" which is inside the MultiplayerHandler Class
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleReceivedDataWithNotification:)
                                                  name:@"MusicQuiz_DidReceiveDataNotification"
@@ -70,11 +102,11 @@
 // || NSString value description ||           value              ||
 //
 
+// Here I make all the operation for the GUEST (Hide some labels, ect)
 - (void)handleReceivedDataWithNotification:(NSNotification *)notification {
     
     // Get the user info dictionary that was received along with the notification.
     NSDictionary *userInfoDict = [notification userInfo];
-    
     NSDictionary *receivedData = [NSKeyedUnarchiver unarchiveObjectWithData:[userInfoDict objectForKey:@"data"]];
     
     // Keep the sender's peerID and get its display name.
@@ -97,10 +129,13 @@
         
         // Indicate that a game is in progress.
         self.isGameRunning = YES;
+        self.imgBackgroundTimer.hidden = NO;
         
-        // Disable the Labels/Buttons
         if (!self.hasCreatedGame) {
             
+            // I'M THE GUEST
+            
+            // Disable the Labels/Buttons of the GUESTS
             self.lblTimer.hidden = NO;
             self.lblNowPlayingSong.hidden = YES;
             self.lblSongArtist.hidden = YES;
@@ -108,9 +143,20 @@
             self.lblTimer.hidden = NO;
             self.btnStartGame.hidden = YES;
             self.lblWhoStart.hidden = YES;
+            self.lblCurrentRound.hidden = NO;
+            
             
             for (UIButton *b in self.btnAnswers) {
                 b.hidden = NO;
+            }
+            
+            // Setting the Question
+            self.lblQuestion.text = [receivedData valueForKey:@"question"];
+            
+            // Setting the Status Images
+            
+            for (int i=0; i<[[receivedData valueForKey:@"numOfQuestions"]intValue]; i++) {
+                [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnUnanswered.png"]];
             }
         }
         
@@ -124,6 +170,10 @@
             i++;
         }
         i=0;
+        
+        // Round
+        [self.lblCurrentRound setText:[NSString stringWithFormat:@"ROUND %@", [receivedData valueForKey:@"round"]]];
+        self.currentRound = [[receivedData valueForKey:@"round"]integerValue];
         
     } else if ([[receivedData valueForKey:@"content"] isEqualToString:@"UserAnswer"]) {
         
@@ -141,12 +191,55 @@
         // I enable the button only to the player that was the guest (the player who answered the questions) and now has to do the host.
         self.btnStartGame.hidden = NO;
         self.isGameRunning = NO;
+        // Hide the Answer Buttons
+        for (UIButton *b in self.btnAnswers) {
+            b.hidden = YES;
+        }
     
     } else if ([[receivedData valueForKey:@"content"] isEqualToString:@"Timer"]) {
         
         // HERE I RECEIVE THE SECONDS LEFT OF THE CURRENT QUESTION
         
         self.lblTimer.text = [receivedData valueForKey:@"seconds"];
+    
+    } else if ([[receivedData valueForKey:@"content"] isEqualToString:@"StatusAnswer"]) {
+        
+        
+        // HERE I RECEIVE THE STATUS OF THE ANSWER (RIGHT, WRONG, NO ANSWER)
+        
+        if ([[receivedData valueForKey:@"status"] isEqualToString:@"CorrectAnswer"]) {
+            
+            // I put a green dot (right answer) for the current question
+            for (int i=0; i<10; i++) {
+                
+                if ([self.imgStatus[i] tag] == self.currentRound) {
+                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnRightAnswer"]];
+                }
+            }
+            
+        } else if ([[receivedData valueForKey:@"status"] isEqualToString:@"WrongAnswer"]) {
+            
+            // I put a red dot (wrong answer) for the current question
+            for (int i=0; i<10; i++) {
+                
+                if ([self.imgStatus[i] tag] == self.currentRound) {
+                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+                }
+            }
+            
+            
+        } else if ([[receivedData valueForKey:@"status"] isEqualToString:@"NoAnswer"]) {
+            
+            // I put a red dot (wrong answer) for the current question
+            for (int i=0; i<10; i++) {
+                
+                if ([self.imgStatus[i] tag] == self.currentRound) {
+                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+                }
+            }
+            
+        }
+        
     }
 }
 
@@ -161,23 +254,44 @@
 {
     if (!self.isGameRunning) {
         
-        if (self.appDelegate.multiplayerHandler.session.connectedPeers != nil) { // If there are players connected, start the game
+        if (self.appDelegate.multiplayerHandler.session.connectedPeers != nil) {
             
-            self.quiz = [[MusicQuiz alloc] initWithType:2 Score:20 QuestionDuration:30 NumberOfQuestion:4];
+            // If there are players connected, start the game
+            
+            self.numberOfQuestionStoredValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"OptionNumberOfQuestion"];
+            self.questionDurationStoredValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"OptionQuestionDuration"];
+            
+            if (self.numberOfQuestionStoredValue && self.questionDurationStoredValue) {
+                self.quiz = [[MusicQuiz alloc] initWithType:self.quizMode CorrectAnswerScore:10 IncorrectAnswerScore:1 QuestionDuration:self.questionDurationStoredValue NumberOfQuestion:self.numberOfQuestionStoredValue];
+                self.quiz.delegate = self;
+            }
+
+            
             [self.quiz startQuiz];
             self.quiz.delegate = self;
             
+            self.lblQuestion.text = [self.quiz.questions[0] text];
+
             self.lblTimer.hidden = NO;
             self.lblNowPlayingSong.hidden = NO;
             self.lblSongArtist.hidden = NO;
             self.lblSongTitle.hidden = NO;
             self.btnStartGame.hidden = YES;
             self.lblWhoStart.hidden = YES;
+            self.imgBackgroundTimer.hidden = NO;
+            self.lblCurrentRound.hidden = NO;
+            
+            // Setting the Status Images
+            for (int i=0; i<self.numberOfQuestionStoredValue; i++) {
+                [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnUnanswered.png"]];
+            }
             
             // Send to the other players that the game has started
             NSMutableDictionary *dictNewGame = [NSMutableDictionary dictionary];
             dictNewGame[@"content"] = @"Message";
             dictNewGame[@"message"] = @"New Game";
+            dictNewGame[@"question"] = [self.quiz.questions[0] text];
+            dictNewGame[@"numOfQuestions"] = [NSString stringWithFormat:@"%d", self.numberOfQuestionStoredValue];
             
             NSError *error;
             
@@ -198,7 +312,7 @@
             }
         }
         
-        // GAME CREATER
+        // GAME CREATOR
         if (self.hasCreatedGame) {
             // The Game Creator doesn't have the button for the answers, so they are hide.
             for (UIButton *b in self.btnAnswers) {
@@ -236,16 +350,13 @@
 
 #pragma mark - MusizQuiz Delegate Methods
 
--(void)correctAnsw
-{
-    NSLog(@"Correct Answer!");
-}
-
 -(void)playingRound:(int)round WithSongs:(NSArray *)songs
 {
     self.lblSongArtist.text = [self.quiz.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
     self.lblSongTitle.text = [self.quiz.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
-    //self.imgSongCover.image = [self.quiz.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
+    self.lblCurrentRound.text = [NSString stringWithFormat:@"ROUND %d", round];
+    
+    self.currentRound = round;
     
     MPMediaItemArtwork *artWork = [self.quiz.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
     if (artWork != nil) {
@@ -258,17 +369,13 @@
     NSMutableDictionary *dictQuestionAnswers = [NSMutableDictionary dictionary];
     dictQuestionAnswers[@"content"] = @"Answers";
     dictQuestionAnswers[@"answers"] = songs;
+    dictQuestionAnswers[@"round"] = [NSString stringWithFormat:@"%d", round];
+    
     
     [self.appDelegate.multiplayerHandler.session sendData:[NSKeyedArchiver archivedDataWithRootObject:[dictQuestionAnswers copy]]
                                           toPeers:self.appDelegate.multiplayerHandler.session.connectedPeers
                                          withMode:MCSessionSendDataReliable
                                             error:nil];
-}
-
--(void)wrongAnsw
-{
-    NSLog(@"Wrong Answer!");
-
 }
 
 -(void)matchFinished:(int)numOfAnswers WithScore:(int)totalScore
@@ -285,9 +392,9 @@
     dictMatchFinished[@"score"] = [NSString stringWithFormat:@"%d", totalScore];
     
     [self.appDelegate.multiplayerHandler.session sendData:[NSKeyedArchiver archivedDataWithRootObject:[dictMatchFinished copy]]
-                                                      toPeers:self.appDelegate.multiplayerHandler.session.connectedPeers
-                                                     withMode:MCSessionSendDataReliable
-                                                        error:nil];
+                                                  toPeers:self.appDelegate.multiplayerHandler.session.connectedPeers
+                                                 withMode:MCSessionSendDataReliable
+                                                    error:nil];
 }
 
 -(void)updateTimer
@@ -303,6 +410,73 @@
                                                  withMode:MCSessionSendDataReliable
                                                     error:nil];
 }
+
+
+-(void)wrongAnswerWithCorrectAnswer:(NSString *)correctAnswer
+{
+    // I put a red dot (wrong answer) for the current question
+    for (int i=0; i<10; i++) {
+        
+        if ([self.imgStatus[i] tag] == self.currentRound) {
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+        }
+    }
+    
+    NSMutableDictionary *dictWrongAnswer = [NSMutableDictionary dictionary];
+    dictWrongAnswer[@"content"] = @"StatusAnswer";
+    dictWrongAnswer[@"status"] = @"WrongAnswer";
+    
+    [self.appDelegate.multiplayerHandler.session sendData:[NSKeyedArchiver archivedDataWithRootObject:[dictWrongAnswer copy]]
+                                                  toPeers:self.appDelegate.multiplayerHandler.session.connectedPeers
+                                                 withMode:MCSessionSendDataReliable
+                                                    error:nil];
+}
+
+-(void)noAnswerWithCorrectAnswer:(NSString *)correctAnswer
+{
+    // I put a red dot (wrong answer) for the current question
+    for (int i=0; i<10; i++) {
+        
+        if ([self.imgStatus[i] tag] == self.currentRound) {
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+        }
+    }
+    
+    NSMutableDictionary *dictNoAnswer = [NSMutableDictionary dictionary];
+    dictNoAnswer[@"content"] = @"StatusAnswer";
+    dictNoAnswer[@"status"] = @"NoAnswer";
+    
+    [self.appDelegate.multiplayerHandler.session sendData:[NSKeyedArchiver archivedDataWithRootObject:[dictNoAnswer copy]]
+                                                  toPeers:self.appDelegate.multiplayerHandler.session.connectedPeers
+                                                 withMode:MCSessionSendDataReliable
+                                                    error:nil];
+
+}
+
+-(void)correctAnsw
+{
+    NSLog(@"Correct Answer!");
+    
+    // I put a green dot (right answer) for the current question
+    for (int i=0; i<10; i++) {
+        
+        if ([self.imgStatus[i] tag] == self.currentRound) {
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnRightAnswer"]];
+        }
+    }
+    
+    NSMutableDictionary *dictCorrectAnswer = [NSMutableDictionary dictionary];
+    dictCorrectAnswer[@"content"] = @"StatusAnswer";
+    dictCorrectAnswer[@"status"] = @"CorrectAnswer";
+    
+    [self.appDelegate.multiplayerHandler.session sendData:[NSKeyedArchiver archivedDataWithRootObject:[dictCorrectAnswer copy]]
+                                                  toPeers:self.appDelegate.multiplayerHandler.session.connectedPeers
+                                                 withMode:MCSessionSendDataReliable
+                                                    error:nil];
+
+}
+
+#pragma mark - IBActions
 
 - (IBAction)goBackToMultiplayerOptions:(id)sender
 {

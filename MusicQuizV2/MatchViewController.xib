@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchViewController">
             <connections>
-                <outlet property="lblMbatchStatus" destination="ScO-f3-yZP" id="jKU-Cb-ETp"/>
+                <outlet property="imgFace" destination="Y7S-hy-XU4" id="KBv-Yx-Fph"/>
                 <outlet property="lblQuestion" destination="lPR-tp-Jyv" id="Yiv-ZF-fe2"/>
                 <outlet property="lblRisposta" destination="wC8-16-Yol" id="l7C-Uh-vfF"/>
                 <outlet property="lblRound" destination="Jx1-hl-Jyw" id="oH1-S4-48w"/>
+                <outlet property="lblScore" destination="ScO-f3-yZP" id="n2D-gJ-R7z"/>
                 <outlet property="lblTimer" destination="nms-ye-XAU" id="Peq-Ri-hQK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="btnAnswers" destination="MDi-9N-Lhh" id="gYg-hN-gdx"/>
                 <outletCollection property="btnAnswers" destination="tPI-co-8Iy" id="5gP-FS-pv5"/>
                 <outletCollection property="btnAnswers" destination="JEB-LH-ZiI" id="OhN-Y7-0j9"/>
                 <outletCollection property="btnAnswers" destination="G2I-Nr-uGL" id="nCG-mu-Kyk"/>
+                <outletCollection property="imgStatus" destination="3wI-5S-28y" id="F2H-1u-xvp"/>
+                <outletCollection property="imgStatus" destination="tT0-zV-cUh" id="Fg2-SU-Yex"/>
+                <outletCollection property="imgStatus" destination="Kov-Rn-g5g" id="ZTS-Kk-uJ7"/>
+                <outletCollection property="imgStatus" destination="yMB-yh-yFX" id="eiQ-gF-C6L"/>
+                <outletCollection property="imgStatus" destination="cyW-u0-CVH" id="ulE-x9-7BU"/>
+                <outletCollection property="imgStatus" destination="267-J9-Ez1" id="GZZ-bb-xlP"/>
+                <outletCollection property="imgStatus" destination="Cnj-Nd-j75" id="Y1i-vf-dyJ"/>
+                <outletCollection property="imgStatus" destination="hEv-Zo-jko" id="eC8-Tp-6xi"/>
+                <outletCollection property="imgStatus" destination="G7I-5H-fld" id="EB4-62-H6K"/>
+                <outletCollection property="imgStatus" destination="vG9-iA-gOH" id="eNP-bE-TwS"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,13 +38,13 @@
                     <rect key="frame" x="-44" y="0.0" width="408" height="217"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Domanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-tp-Jyv">
-                    <rect key="frame" x="20" y="34" width="280" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="20" y="34" width="280" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDi-9N-Lhh">
-                    <rect key="frame" x="20" y="290" width="280" height="30"/>
+                    <rect key="frame" x="20" y="283" width="280" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,7 +54,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPI-co-8Iy">
-                    <rect key="frame" x="20" y="328" width="280" height="30"/>
+                    <rect key="frame" x="20" y="321" width="280" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,7 +64,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEB-LH-ZiI">
-                    <rect key="frame" x="20" y="366" width="280" height="30"/>
+                    <rect key="frame" x="20" y="359" width="280" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +74,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2I-Nr-uGL">
-                    <rect key="frame" x="20" y="404" width="280" height="30"/>
+                    <rect key="frame" x="20" y="397" width="280" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,23 +90,57 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Risposta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wC8-16-Yol">
-                    <rect key="frame" x="20" y="464" width="280" height="21"/>
+                    <rect key="frame" x="20" y="527" width="280" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx1-hl-Jyw">
-                    <rect key="frame" x="20" y="238" width="280" height="23"/>
+                    <rect key="frame" x="20" y="181" width="280" height="23"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScO-f3-yZP">
-                    <rect key="frame" x="20" y="510" width="280" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScO-f3-yZP">
+                    <rect key="frame" x="166" y="478" width="48" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7S-hy-XU4">
+                    <rect key="frame" x="98" y="459" width="60" height="60"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wI-5S-28y">
+                    <rect key="frame" x="24" y="242" width="20" height="20"/>
+                    <accessibility key="accessibilityConfiguration" label=""/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tT0-zV-cUh">
+                    <rect key="frame" x="52" y="242" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kov-Rn-g5g">
+                    <rect key="frame" x="80" y="242" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yMB-yh-yFX">
+                    <rect key="frame" x="108" y="242" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cyW-u0-CVH">
+                    <rect key="frame" x="136" y="242" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="267-J9-Ez1">
+                    <rect key="frame" x="164" y="242" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cnj-Nd-j75">
+                    <rect key="frame" x="192" y="242" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vG9-iA-gOH">
+                    <rect key="frame" x="276" y="242" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7I-5H-fld">
+                    <rect key="frame" x="248" y="242" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEv-Zo-jko">
+                    <rect key="frame" x="220" y="242" width="20" height="20"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

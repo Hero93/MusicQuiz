@@ -10,7 +10,5 @@
 
 @interface HomeViewController : UIViewController
 - (IBAction)beginGame:(id)sender;
-
-
-
+- (IBAction)lauchOptions:(id)sender;
 @end

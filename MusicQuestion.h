@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "MusicQuizModeTypes.h"
 
 @interface MusicQuestion : NSObject
 
@@ -16,8 +17,7 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSArray *answers;
 @property (nonatomic)         int correctAnswer;
-@property (nonatomic)         int score;
 
--(instancetype)initWithScore:(int)score type:(int)type correctAnswer:(int)correctA;
+-(instancetype)initWithType:(enum musicQuizMode)type correctAnswer:(int)correctA numberOfAnswers:(int)numOfAnswers;
 
 @end

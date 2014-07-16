@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MQMultiplayerHandler.h"
+#import "MusicQuizModeTypes.h"
 
 @interface MultiplayerOptionsViewController : UIViewController <MCBrowserViewControllerDelegate>
 
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnStartPlayerResearch;
 @property (weak, nonatomic) IBOutlet UIButton *btnDisconnect;
 
+@property (nonatomic) enum musicQuizMode quizMode;
 
 - (IBAction)disconnect:(id)sender;
 - (IBAction)searchForPlayers:(id)sender;

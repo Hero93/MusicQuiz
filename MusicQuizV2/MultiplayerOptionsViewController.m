@@ -44,6 +44,7 @@
                                                object:nil];
     
     self.btnStartGame.hidden = YES;
+    self.btnDisconnect.hidden = YES;
 }
 
 #pragma mark - Browser View Controller Delegate Methods
@@ -94,6 +95,7 @@
             allPlayers = [allPlayers stringByAppendingString:displayName];
             
             self.btnStartGame.hidden = NO;
+            self.btnDisconnect.hidden = NO;
         }
         
         [self.tvPlayerList setText:allPlayers];
@@ -103,6 +105,7 @@
 -(void)startTheGame:(id)sender
 {
     MultiplayerViewController *multiplayerVC = [[MultiplayerViewController alloc] initWithNibName:@"MultiplayerViewController" bundle:nil];
+    multiplayerVC.quizMode = self.quizMode;
     [self.navigationController pushViewController:multiplayerVC animated:YES];
 }
 

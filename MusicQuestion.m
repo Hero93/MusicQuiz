@@ -11,20 +11,24 @@
 @implementation MusicQuestion
 
 #pragma mark - Init Methods
--(instancetype)initWithScore:(int)score type:(int)type correctAnswer:(int)correctA
+
+-(instancetype)initWithType:(enum musicQuizMode)type correctAnswer:(int)correctA numberOfAnswers:(int)numOfAnswers
 {
     self = [super init];
     
     if (self) {
-        _answers = [self getRandomSongs:4];
-        _score = score;
+                
+        _answers = [self getRandomSongs:numOfAnswers];
         _correctAnswer = correctA;
+        
+        NSLog(@"Correct Answer: %d", correctA);
+        
         if (type == 1 ) {
             _text = @"Chi è l'artista ?";
         } else if (type == 2) {
             _text = @"Qual'è il titolo ?";
         } else if (type == 3) {
-            _text = @"Chi è l'artista ? E il titolo ?";
+            _text = @"L'artista ? Il titolo ?";
         } else {
             _text = @"Testo della domanda";
         }
@@ -33,10 +37,6 @@
     return self;
 }
 
--(instancetype) init
-{
-    return [self initWithScore:0 type:0 correctAnswer:0];
-}
 
 #pragma mark - Music Library Query
 /**
@@ -59,9 +59,9 @@
     for (int i=0; i<numOfSongs; i++) {
         int randomNumber = arc4random() % itemsFromGenericQuery.count;
         [songsToPlay addObject:itemsFromGenericQuery[randomNumber]];
-        NSLog(@"%@", [songsToPlay[i] valueForProperty:MPMediaItemPropertyTitle]);
+        //NSLog(@"%@", [songsToPlay[i] valueForProperty:MPMediaItemPropertyTitle]);
     }
-    
+        
     return songsToPlay;
 }
 

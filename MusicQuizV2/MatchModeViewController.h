@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MusicQuizModeTypes.h"
 
 @interface MatchModeViewController : UIViewController
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *ArtistMode;
 @property (weak, nonatomic) IBOutlet UIButton *ArtistAndTitleMode;
 
+@property (weak, nonatomic) NSString *gameMode;
 
 - (IBAction)launchTitleMode:(id)sender;
 - (IBAction)lauchArtistMode:(id)sender;

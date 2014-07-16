@@ -13,11 +13,18 @@
 		4B24E9F01922ADB900043EA5 /* MusicQuiz.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B24E9EF1922ADB900043EA5 /* MusicQuiz.png */; };
 		4B24E9F41922AE6500043EA5 /* MatchModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B24E9F21922AE6500043EA5 /* MatchModeViewController.m */; };
 		4B24E9F51922AE6500043EA5 /* MatchModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B24E9F31922AE6500043EA5 /* MatchModeViewController.xib */; };
+		4B2D4087197680DA00BBCC09 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D4086197680DA00BBCC09 /* icon.png */; };
+		4B4C03D21975B23600D31CD1 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C03D01975B23600D31CD1 /* OptionsViewController.m */; };
+		4B4C03D31975B23600D31CD1 /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4C03D11975B23600D31CD1 /* OptionsViewController.xib */; };
 		4B694DB8195CD2FB000BFAFE /* UIColor+MusicQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B694DB7195CD2FB000BFAFE /* UIColor+MusicQuiz.m */; };
 		4B6AA136192650A100F815A4 /* backgroundTimerX2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B6AA135192650A000F815A4 /* backgroundTimerX2.png */; };
 		4B6DBD86194F8D340035FF06 /* UIFont+MusicQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6DBD85194F8D340035FF06 /* UIFont+MusicQuiz.m */; };
-		4B80D284194DE49200677723 /* GuestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B80D282194DE49200677723 /* GuestViewController.xib */; };
-		4B80D28B194DE4C100677723 /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B80D289194DE4C100677723 /* HostViewController.xib */; };
+		4B903F8619630D160049E987 /* faceNeutral.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B903F8319630D160049E987 /* faceNeutral.png */; };
+		4B903F8719630D160049E987 /* faceSad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B903F8419630D160049E987 /* faceSad.png */; };
+		4B903F8819630D160049E987 /* faceHappy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B903F8519630D160049E987 /* faceHappy.png */; };
+		4BADFD3D19632CFB00791820 /* btnWrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BADFD3C19632CFB00791820 /* btnWrong.png */; };
+		4BADFD3F19632E7100791820 /* btnRightAnswer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BADFD3E19632E7100791820 /* btnRightAnswer.png */; };
+		4BADFD411963317200791820 /* btnUnanswered.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BADFD401963317200791820 /* btnUnanswered.png */; };
 		4BAE7C0E1929505D00C7FDDE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE7C0C1929505D00C7FDDE /* HomeViewController.m */; };
 		4BAE7C0F1929505D00C7FDDE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C0D1929505D00C7FDDE /* HomeViewController.xib */; };
 		4BAE7C111929513700C7FDDE /* GiocaButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C101929513700C7FDDE /* GiocaButton.png */; };
@@ -26,6 +33,8 @@
 		4BAE7C1A192956C200C7FDDE /* EndMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE7C18192956C200C7FDDE /* EndMatchViewController.m */; };
 		4BAE7C1B192956C200C7FDDE /* EndMatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C19192956C200C7FDDE /* EndMatchViewController.xib */; };
 		4BAE7C1D19295FA200C7FDDE /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE7C1C19295FA200C7FDDE /* note.png */; };
+		4BBB42CB1961F5030093D2BE /* btnBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BBB42CA1961F5030093D2BE /* btnBack.png */; };
+		4BBB42CF1961FAC90093D2BE /* btnBack2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BBB42CE1961FAC90093D2BE /* btnBack2.png */; };
 		4BC34B4D19241851005AA36A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BC34B4C1924151C005AA36A /* Montserrat-Regular.ttf */; };
 		4BC34B4E19241854005AA36A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BC34B4B19241516005AA36A /* Montserrat-Bold.ttf */; };
 		4BCB144C194DD22700C78B8A /* GameModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB144A194DD22700C78B8A /* GameModeViewController.m */; };
@@ -76,13 +85,22 @@
 		4B24E9F11922AE6500043EA5 /* MatchModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchModeViewController.h; sourceTree = "<group>"; };
 		4B24E9F21922AE6500043EA5 /* MatchModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchModeViewController.m; sourceTree = "<group>"; };
 		4B24E9F31922AE6500043EA5 /* MatchModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchModeViewController.xib; sourceTree = "<group>"; };
+		4B2D4086197680DA00BBCC09 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		4B4C03CF1975B23600D31CD1 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		4B4C03D01975B23600D31CD1 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		4B4C03D11975B23600D31CD1 /* OptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
+		4B596CD51975B614008BEF4D /* MusicQuizModeTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MusicQuizModeTypes.h; path = ../MusicQuizModeTypes.h; sourceTree = "<group>"; };
 		4B694DB6195CD2FB000BFAFE /* UIColor+MusicQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+MusicQuiz.h"; path = "../UIColor+MusicQuiz.h"; sourceTree = "<group>"; };
 		4B694DB7195CD2FB000BFAFE /* UIColor+MusicQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MusicQuiz.m"; path = "../UIColor+MusicQuiz.m"; sourceTree = "<group>"; };
 		4B6AA135192650A000F815A4 /* backgroundTimerX2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTimerX2.png; sourceTree = "<group>"; };
 		4B6DBD84194F8D340035FF06 /* UIFont+MusicQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+MusicQuiz.h"; path = "../UIFont+MusicQuiz.h"; sourceTree = "<group>"; };
 		4B6DBD85194F8D340035FF06 /* UIFont+MusicQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MusicQuiz.m"; path = "../UIFont+MusicQuiz.m"; sourceTree = "<group>"; };
-		4B80D282194DE49200677723 /* GuestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuestViewController.xib; sourceTree = "<group>"; };
-		4B80D289194DE4C100677723 /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HostViewController.xib; sourceTree = "<group>"; };
+		4B903F8319630D160049E987 /* faceNeutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faceNeutral.png; sourceTree = "<group>"; };
+		4B903F8419630D160049E987 /* faceSad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faceSad.png; sourceTree = "<group>"; };
+		4B903F8519630D160049E987 /* faceHappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faceHappy.png; sourceTree = "<group>"; };
+		4BADFD3C19632CFB00791820 /* btnWrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnWrong.png; sourceTree = "<group>"; };
+		4BADFD3E19632E7100791820 /* btnRightAnswer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnRightAnswer.png; sourceTree = "<group>"; };
+		4BADFD401963317200791820 /* btnUnanswered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnUnanswered.png; sourceTree = "<group>"; };
 		4BAE7C0B1929505D00C7FDDE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		4BAE7C0C1929505D00C7FDDE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		4BAE7C0D1929505D00C7FDDE /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -93,6 +111,8 @@
 		4BAE7C18192956C200C7FDDE /* EndMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndMatchViewController.m; sourceTree = "<group>"; };
 		4BAE7C19192956C200C7FDDE /* EndMatchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EndMatchViewController.xib; sourceTree = "<group>"; };
 		4BAE7C1C19295FA200C7FDDE /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		4BBB42CA1961F5030093D2BE /* btnBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnBack.png; sourceTree = "<group>"; };
+		4BBB42CE1961FAC90093D2BE /* btnBack2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnBack2.png; sourceTree = "<group>"; };
 		4BC34B4B19241516005AA36A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		4BC34B4C1924151C005AA36A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4BCB1449194DD22700C78B8A /* GameModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeViewController.h; sourceTree = "<group>"; };
@@ -189,9 +209,37 @@
 			name = "Match Mode";
 			sourceTree = "<group>";
 		};
+		4B4C03D41975B29400D31CD1 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				4B4C03CF1975B23600D31CD1 /* OptionsViewController.h */,
+				4B4C03D01975B23600D31CD1 /* OptionsViewController.m */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
+		4B596CD61975B76C008BEF4D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4B694DB6195CD2FB000BFAFE /* UIColor+MusicQuiz.h */,
+				4B694DB7195CD2FB000BFAFE /* UIColor+MusicQuiz.m */,
+				4B6DBD84194F8D340035FF06 /* UIFont+MusicQuiz.h */,
+				4B6DBD85194F8D340035FF06 /* UIFont+MusicQuiz.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		4B6AA137192666AF00F815A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BADFD401963317200791820 /* btnUnanswered.png */,
+				4BADFD3E19632E7100791820 /* btnRightAnswer.png */,
+				4BADFD3C19632CFB00791820 /* btnWrong.png */,
+				4B903F8319630D160049E987 /* faceNeutral.png */,
+				4B903F8419630D160049E987 /* faceSad.png */,
+				4B903F8519630D160049E987 /* faceHappy.png */,
+				4BBB42CE1961FAC90093D2BE /* btnBack2.png */,
+				4BBB42CA1961F5030093D2BE /* btnBack.png */,
 				4BDB70C6195CD80D005B314B /* no-cover.png */,
 				4BCF2D3219325B6500667D61 /* settings.png */,
 				4BCF2D2C1931EFDB00667D61 /* logo3.png */,
@@ -280,10 +328,9 @@
 		4BCF5712191A1BAE00454799 /* MusicQuizV2 */ = {
 			isa = PBXGroup;
 			children = (
-				4B694DB6195CD2FB000BFAFE /* UIColor+MusicQuiz.h */,
-				4B694DB7195CD2FB000BFAFE /* UIColor+MusicQuiz.m */,
-				4B6DBD84194F8D340035FF06 /* UIFont+MusicQuiz.h */,
-				4B6DBD85194F8D340035FF06 /* UIFont+MusicQuiz.m */,
+				4B2D4086197680DA00BBCC09 /* icon.png */,
+				4B596CD51975B614008BEF4D /* MusicQuizModeTypes.h */,
+				4B596CD61975B76C008BEF4D /* Categories */,
 				4B6AA137192666AF00F815A4 /* Resources */,
 				4BCF5748191A3C9000454799 /* Model */,
 				4BCF574A191A3CB800454799 /* View */,
@@ -340,6 +387,7 @@
 			children = (
 				4BCF2D2B1931EBB600667D61 /* First Time */,
 				4BAE7C0A1929504D00C7FDDE /* Home */,
+				4B4C03D41975B29400D31CD1 /* Options */,
 				4BCB144E194DD23800C78B8A /* Game Mode */,
 				4B24E9F61922AE6C00043EA5 /* Match Mode */,
 				4BAE7C16192955F600C7FDDE /* EndMatch */,
@@ -350,8 +398,7 @@
 		4BCF574A191A3CB800454799 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4B80D289194DE4C100677723 /* HostViewController.xib */,
-				4B80D282194DE49200677723 /* GuestViewController.xib */,
+				4B4C03D11975B23600D31CD1 /* OptionsViewController.xib */,
 				4BCF2D281931EBAC00667D61 /* FirstTimeViewController.xib */,
 				4BAE7C0D1929505D00C7FDDE /* HomeViewController.xib */,
 				4BCB144B194DD22700C78B8A /* GameModeViewController.xib */,
@@ -467,28 +514,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC34B4D19241851005AA36A /* Montserrat-Regular.ttf in Resources */,
-				4B80D28B194DE4C100677723 /* HostViewController.xib in Resources */,
 				4BCB144D194DD22700C78B8A /* GameModeViewController.xib in Resources */,
+				4B903F8619630D160049E987 /* faceNeutral.png in Resources */,
 				4BDEDB79195862CD0015F1FA /* MultiplayerOptionsViewController.xib in Resources */,
+				4B2D4087197680DA00BBCC09 /* icon.png in Resources */,
+				4BADFD411963317200791820 /* btnUnanswered.png in Resources */,
 				4B019AD3194DEC4A0077280E /* MultiplayerViewController.xib in Resources */,
 				4BAE7C111929513700C7FDDE /* GiocaButton.png in Resources */,
 				4BCF2D2A1931EBAC00667D61 /* FirstTimeViewController.xib in Resources */,
 				4BCF2D2D1931EFDB00667D61 /* logo3.png in Resources */,
 				4BCF5717191A1BAE00454799 /* InfoPlist.strings in Resources */,
 				4B24E9F51922AE6500043EA5 /* MatchModeViewController.xib in Resources */,
-				4B80D284194DE49200677723 /* GuestViewController.xib in Resources */,
+				4BBB42CB1961F5030093D2BE /* btnBack.png in Resources */,
 				4BDB70C7195CD80D005B314B /* no-cover.png in Resources */,
+				4B903F8819630D160049E987 /* faceHappy.png in Resources */,
 				4BCF2D3319325B6500667D61 /* settings.png in Resources */,
 				4BAE7C131929527900C7FDDE /* LogoApp.png in Resources */,
 				4B6AA136192650A100F815A4 /* backgroundTimerX2.png in Resources */,
 				4BCF571F191A1BAE00454799 /* Images.xcassets in Resources */,
 				4BAE7C151929550700C7FDDE /* logo2.png in Resources */,
+				4B903F8719630D160049E987 /* faceSad.png in Resources */,
 				4B24E9F01922ADB900043EA5 /* MusicQuiz.png in Resources */,
 				4BCF5747191A392900454799 /* MatchViewController.xib in Resources */,
+				4BADFD3F19632E7100791820 /* btnRightAnswer.png in Resources */,
 				4BAE7C0F1929505D00C7FDDE /* HomeViewController.xib in Resources */,
+				4B4C03D31975B23600D31CD1 /* OptionsViewController.xib in Resources */,
 				4BAE7C1D19295FA200C7FDDE /* note.png in Resources */,
 				4BC34B4E19241854005AA36A /* Montserrat-Bold.ttf in Resources */,
+				4BADFD3D19632CFB00791820 /* btnWrong.png in Resources */,
 				4BAE7C1B192956C200C7FDDE /* EndMatchViewController.xib in Resources */,
+				4BBB42CF1961FAC90093D2BE /* btnBack2.png in Resources */,
 				4B159D8C1927C48F00A15063 /* musicQuizLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +576,7 @@
 				4BCB144C194DD22700C78B8A /* GameModeViewController.m in Sources */,
 				4BAE7C1A192956C200C7FDDE /* EndMatchViewController.m in Sources */,
 				4BCF5719191A1BAE00454799 /* main.m in Sources */,
+				4B4C03D21975B23600D31CD1 /* OptionsViewController.m in Sources */,
 				4B019AD2194DEC4A0077280E /* MultiplayerViewController.m in Sources */,
 				4B6DBD86194F8D340035FF06 /* UIFont+MusicQuiz.m in Sources */,
 			);

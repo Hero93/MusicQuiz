@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
@@ -8,8 +8,11 @@
             <connections>
                 <outlet property="btnBack" destination="dsJ-fX-iZ2" id="dRZ-Wz-xNY"/>
                 <outlet property="btnStartGame" destination="wcX-Mi-10j" id="gCC-Yc-4mF"/>
+                <outlet property="imgBackgroundTimer" destination="4la-Yo-XMd" id="cHT-eD-NN3"/>
                 <outlet property="imgSongCover" destination="C5O-R7-qU5" id="Xyh-Da-uDT"/>
+                <outlet property="lblCurrentRound" destination="dZ1-AG-yAw" id="MJk-H0-d2L"/>
                 <outlet property="lblNowPlayingSong" destination="bUM-q4-vTe" id="vFh-jV-IFN"/>
+                <outlet property="lblQuestion" destination="ldn-gW-AI3" id="dVZ-57-GNm"/>
                 <outlet property="lblSongArtist" destination="cQZ-vn-EhU" id="lmG-Yl-9yx"/>
                 <outlet property="lblSongTitle" destination="ZlV-Ub-i5O" id="Ld1-ew-tas"/>
                 <outlet property="lblTimer" destination="68l-Ng-noB" id="Iis-es-Htn"/>
@@ -19,6 +22,16 @@
                 <outletCollection property="btnAnswers" destination="LVr-cX-whz" id="0nk-S3-DCR"/>
                 <outletCollection property="btnAnswers" destination="TiW-QJ-3zE" id="fbX-SF-cqI"/>
                 <outletCollection property="btnAnswers" destination="7bH-dB-bhG" id="E9J-7G-CKx"/>
+                <outletCollection property="imgStatus" destination="R1v-BS-sAe" id="H4j-iS-D35"/>
+                <outletCollection property="imgStatus" destination="Gn4-tw-9v8" id="U5k-Fn-Jp6"/>
+                <outletCollection property="imgStatus" destination="nUW-Ev-fA5" id="4MB-Dt-x4K"/>
+                <outletCollection property="imgStatus" destination="iMY-bz-cLM" id="UNa-Vd-oYH"/>
+                <outletCollection property="imgStatus" destination="Hvz-4n-Emb" id="6wr-Sh-af8"/>
+                <outletCollection property="imgStatus" destination="xak-8q-kMb" id="CM5-Lo-aeB"/>
+                <outletCollection property="imgStatus" destination="j2x-w7-IEn" id="SbT-5k-r7v"/>
+                <outletCollection property="imgStatus" destination="R1v-KP-iCV" id="eny-qW-nXp"/>
+                <outletCollection property="imgStatus" destination="KBa-Lm-mpq" id="ZOy-pu-Cb8"/>
+                <outletCollection property="imgStatus" destination="b7T-GK-pIl" id="Fr5-xH-GfE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,6 +39,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundTimerX2.png" translatesAutoresizingMaskIntoConstraints="NO" id="4la-Yo-XMd">
+                    <rect key="frame" x="-44" y="0.0" width="408" height="217"/>
+                </imageView>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68l-Ng-noB">
+                    <rect key="frame" x="20" y="101" width="280" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-Mi-10j">
                     <rect key="frame" x="20" y="269" width="280" height="30"/>
                     <state key="normal" title="Inizia Prima io !">
@@ -36,18 +57,13 @@
                     </connections>
                 </button>
                 <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chi inizia prima preme il pulsante !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh4-kU-f6X">
-                    <rect key="frame" x="20" y="108" width="280" height="20.5"/>
+                    <rect key="frame" x="20" y="225" width="280" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68l-Ng-noB">
-                    <rect key="frame" x="20" y="71" width="280" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Now Playing Song:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUM-q4-vTe">
-                    <rect key="frame" x="20" y="178" width="280" height="20.5"/>
+                    <rect key="frame" x="20" y="267" width="280" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -88,15 +104,15 @@
                     </connections>
                 </button>
                 <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C5O-R7-qU5">
-                    <rect key="frame" x="85" y="224" width="150" height="150"/>
+                    <rect key="frame" x="85" y="295" width="150" height="150"/>
                 </imageView>
                 <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlV-Ub-i5O">
-                    <rect key="frame" x="20" y="402" width="280" height="20.5"/>
+                    <rect key="frame" x="20" y="459" width="280" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQZ-vn-EhU">
-                    <rect key="frame" x="20" y="430" width="280" height="20.5"/>
+                    <rect key="frame" x="20" y="481" width="280" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -109,10 +125,56 @@
                         <action selector="goBackToMultiplayerOptions:" destination="-1" eventType="touchUpInside" id="WsH-hZ-gVD"/>
                     </connections>
                 </button>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ1-AG-yAw">
+                    <rect key="frame" x="20" y="177" width="280" height="23"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Domanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldn-gW-AI3">
+                    <rect key="frame" x="14" y="27" width="280" height="33"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1v-BS-sAe">
+                    <rect key="frame" x="22" y="241" width="20" height="20"/>
+                    <accessibility key="accessibilityConfiguration" label=""/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gn4-tw-9v8">
+                    <rect key="frame" x="50" y="241" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nUW-Ev-fA5">
+                    <rect key="frame" x="78" y="241" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMY-bz-cLM">
+                    <rect key="frame" x="106" y="241" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hvz-4n-Emb">
+                    <rect key="frame" x="134" y="241" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xak-8q-kMb">
+                    <rect key="frame" x="162" y="241" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j2x-w7-IEn">
+                    <rect key="frame" x="190" y="241" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7T-GK-pIl">
+                    <rect key="frame" x="274" y="241" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBa-Lm-mpq">
+                    <rect key="frame" x="246" y="241" width="20" height="20"/>
+                </imageView>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1v-KP-iCV">
+                    <rect key="frame" x="218" y="241" width="20" height="20"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="backgroundTimerX2.png" width="640" height="432"/>
+    </resources>
 </document>

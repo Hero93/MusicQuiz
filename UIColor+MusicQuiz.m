@@ -12,12 +12,12 @@
 
 +(UIColor *)musicQuizGray
 {
-    return [UIColor colorWithRed:1 green:0.231 blue:0.188 alpha:1];
+    return [UIColor colorWithRed:0.365 green:0.365 blue:0.365 alpha:1];
 }
 
 +(UIColor *)musicQuizRed
 {
-    return [UIColor colorWithRed:0.365 green:0.365 blue:0.365 alpha:1];
+    return [UIColor colorWithRed:1 green:0.231 blue:0.188 alpha:1];
 }
 
 @end

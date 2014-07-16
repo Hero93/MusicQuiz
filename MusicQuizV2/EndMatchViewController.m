@@ -77,7 +77,7 @@
     NSArray *viewControllers = [[self navigationController] viewControllers];
     for( int i=0;i<[viewControllers count];i++){
         id obj=[viewControllers objectAtIndex:i];
-        if([obj isKindOfClass:[GameModeViewController class]]){
+        if([obj isKindOfClass:[HomeViewController class]]){
             [[self navigationController] popToViewController:obj animated:YES];
             return;
         }

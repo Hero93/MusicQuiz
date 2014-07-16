@@ -8,8 +8,10 @@
 
 #import "MatchModeViewController.h"
 #import "MatchViewController.h"
+#import "MultiplayerOptionsViewController.h"
 #import "UIFont+MusicQuiz.h"
 #import "UIColor+MusicQuiz.h"
+#import "MusicQuizModeTypes.h"
 
 @interface MatchModeViewController ()
 
@@ -34,7 +36,10 @@
 {
     [super viewDidLoad];
     
+    // Hide the Navigation Bar
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    [self setBackButton];
     
     [self.lblGameMode setFont:[UIFont lg_musicQuizFontBoldWithSize:25]];
     self.lblGameMode.textColor = [UIColor musicQuizGray];
@@ -49,6 +54,21 @@
     self.ArtistAndTitleMode.tintColor = [UIColor musicQuizRed];
 }
 
+- (void)setBackButton
+{
+    UIButton *backButton =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton setImage:[UIImage imageNamed:@"btnBack2.png"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setFrame:CGRectMake(10, 25, 19, 32)];
+    
+    [self.view addSubview:backButton];
+}
+
+- (void)backButtonTapped:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -59,19 +79,45 @@
 
 - (IBAction)launchTitleMode:(id)sender
 {
-    MatchViewController *matchVC = [[MatchViewController alloc] initWithQuizMode:2];
-    [self.navigationController pushViewController:matchVC animated:YES];
+    if ([self.gameMode isEqualToString:@"SinglePlayer"]) {
+        MatchViewController *matchVC = [[MatchViewController alloc] initWithQuizMode:musicQuizModeTitle];
+        [self.navigationController pushViewController:matchVC animated:YES];
+    } else if ([self.gameMode isEqualToString:@"Multiplayer"]) {
+        
+        MultiplayerOptionsViewController *multiplayerOptionsVC = [[MultiplayerOptionsViewController alloc] initWithNibName:@"MultiplayerOptionsViewController" bundle:nil];
+        multiplayerOptionsVC.quizMode = musicQuizModeTitle;
+        [self.navigationController pushViewController:multiplayerOptionsVC animated:YES];
+
+    }
+ 
 }
 
 - (IBAction)lauchArtistMode:(id)sender
 {
-    MatchViewController *matchVC = [[MatchViewController alloc] initWithQuizMode:1];
+    if ([self.gameMode isEqualToString:@"SinglePlayer"]) {
+    MatchViewController *matchVC = [[MatchViewController alloc] initWithQuizMode:musicQuizModeArtist];
     [self.navigationController pushViewController:matchVC animated:YES];
+    } else if ([self.gameMode isEqualToString:@"Multiplayer"]) {
+        
+        MultiplayerOptionsViewController *multiplayerOptionsVC = [[MultiplayerOptionsViewController alloc] initWithNibName:@"MultiplayerOptionsViewController" bundle:nil];
+        multiplayerOptionsVC.quizMode = musicQuizModeArtist;
+        [self.navigationController pushViewController:multiplayerOptionsVC animated:YES];
+
+    }
+
     
 }
 - (IBAction)launchArtistAndTitleMode:(id)sender
 {
-    MatchViewController *matchVC = [[MatchViewController alloc] initWithQuizMode:3];
+    if ([self.gameMode isEqualToString:@"SinglePlayer"]) {
+    MatchViewController *matchVC = [[MatchViewController alloc] initWithQuizMode:musicQuizModeArtistTitle];
     [self.navigationController pushViewController:matchVC animated:YES];
+    } else if ([self.gameMode isEqualToString:@"Multiplayer"]) {
+        
+        MultiplayerOptionsViewController *multiplayerOptionsVC = [[MultiplayerOptionsViewController alloc] initWithNibName:@"MultiplayerOptionsViewController" bundle:nil];
+        multiplayerOptionsVC.quizMode = musicQuizModeArtistTitle;
+        [self.navigationController pushViewController:multiplayerOptionsVC animated:YES];
+        
+    }
 }
 @end

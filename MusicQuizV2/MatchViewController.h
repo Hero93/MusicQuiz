@@ -14,14 +14,18 @@
 
 - (id)initWithQuizMode:(int)gameMode;
 
-@property (weak, nonatomic)     IBOutlet UILabel *lblMbatchStatus;
 @property (nonatomic, weak)     IBOutlet UILabel *lblQuestion;
+@property (nonatomic, weak)     IBOutlet UILabel *lblTimer;
 @property (weak, nonatomic)     IBOutlet UILabel *lblRound;
 @property (nonatomic, strong)   IBOutletCollection(UIButton) NSArray *btnAnswers;
-@property (nonatomic, weak)     IBOutlet UILabel *lblTimer;
-@property (weak, nonatomic)     IBOutlet UILabel *lblRisposta;
 
-- (IBAction)replayMatch:(id)sender;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imgStatus;
+
+
+@property (weak, nonatomic)     IBOutlet UILabel *lblRisposta;
+@property (weak, nonatomic)     IBOutlet UIImageView *imgFace;
+@property (weak, nonatomic)     IBOutlet UILabel *lblScore;
+
 - (IBAction)showAnswer:(id)sender;
 
 @end

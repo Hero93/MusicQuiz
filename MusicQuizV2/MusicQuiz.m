@@ -13,9 +13,9 @@
     NSTimer *secondsTimer;
     MPMediaItem *currentItem;
     NSMutableArray *chosenSongsIndexes;
-    int round;
-    int userNumOfAnswers;
-    int questionType;
+    int currentRound;
+    int countAnsweredQuestion;                          // Used to check the number of answered question
+    BOOL hasAnswerTheQuestion;                          // Flag used to check if the user answers the question
 }
 @synthesize questions;
 
@@ -23,8 +23,9 @@ int tmpFlag = 0;
 
 #pragma mark - Initializers
 
--(instancetype)initWithType:(int)type Score:(int)score QuestionDuration:(int)duration NumberOfQuestion:(int)num
+-(instancetype)initWithType:(enum musicQuizMode)type CorrectAnswerScore:(int)cas IncorrectAnswerScore:(int)ias QuestionDuration:(int)duration NumberOfQuestion:(int)num
 {
+    
     self = [super init];
     
     if (self) {
@@ -33,21 +34,17 @@ int tmpFlag = 0;
         [_musicPlayer setRepeatMode:MPMusicRepeatModeNone];
         [_musicPlayer setShuffleMode:MPMusicShuffleModeOff];
         _type = type;
-        _score = score;
+        _incorrectAnswerScore = ias;
+        _correctAnswerScore = cas;
         _questionDuration = duration;
-        _numberOfQuestion = num;
+        _numberOfQuestions = num;
         _timeTick = duration;
-        
-        round = 1;
-        userNumOfAnswers = 0;
-        
-        questionType = 2;
-        
+                
         self.questions = [[NSMutableArray alloc] init];
         
         for (int i=0; i<num; i++) {
             // I create n instances of "MusicQuestion"
-            MusicQuestion *q = [[MusicQuestion alloc] initWithScore:score type:type correctAnswer:arc4random()%4];
+            MusicQuestion *q = [[MusicQuestion alloc] initWithType:type correctAnswer:arc4random()%4 numberOfAnswers:4];
             [self.questions addObject:q];
         }
         
@@ -55,7 +52,6 @@ int tmpFlag = 0;
     }
     
     return self;
-
 }
 
 #pragma mark - Match Methods
@@ -67,10 +63,10 @@ int tmpFlag = 0;
         // Song chosen for the playing queue (the correctAnswer property of MusicQuestion tells you the chosen song)
         NSMutableArray *chosenSongs = [[NSMutableArray alloc] init];
         
-        for (int i=0; i<self.numberOfQuestion; i++) {
+        for (int i=0; i<self.numberOfQuestions; i++) {
             int tmp = [self.questions[i] correctAnswer];
             [chosenSongs addObject:[self.questions[i] answers][tmp]];
-            NSLog(@"Chosen Song: %@", [chosenSongs[i] valueForProperty:MPMediaItemPropertyTitle]);
+            //NSLog(@"Chosen Song: %@", [chosenSongs[i] valueForProperty:MPMediaItemPropertyTitle]);
         }
     
         // I create a songs queue of type "MPMediaItemCollection" with the MPMediaItem inside the "chosenSongs" array
@@ -83,8 +79,9 @@ int tmpFlag = 0;
         // This timer is called after the end of the time associate with the song
         nextSongTimer = [NSTimer scheduledTimerWithTimeInterval:self.questionDuration target:self selector:@selector(next) userInfo:nil repeats:YES];
     
-    
-    
+        hasAnswerTheQuestion = NO;
+        currentRound = 1;
+        countAnsweredQuestion = 0;
 }
 
 /**
@@ -100,7 +97,7 @@ int tmpFlag = 0;
     
     if (self.questions) {
         
-        for (int i=0; i<self.numberOfQuestion; i++) {
+        for (int i=0; i<4; i++) {
             NSString *songTitle = [[self.questions[index] answers][i] valueForProperty:MPMediaItemPropertyTitle];
             [answInString addObject:songTitle];
         }
@@ -122,7 +119,8 @@ int tmpFlag = 0;
     
     if (self.questions) {
         
-        for (int i=0; i<self.numberOfQuestion; i++) {
+        // It has to be
+        for (int i=0; i<4; i++) {
             NSString *songTitle = [[self.questions[index] answers][i] valueForProperty:MPMediaItemPropertyArtist];
             [answInString addObject:songTitle];
         }
@@ -139,63 +137,68 @@ int tmpFlag = 0;
 -(void) checkAnswer:(NSString*)song
 {
     // The user have answered the question
+    hasAnswerTheQuestion = YES;
     
     switch (self.type)
     {
-            // ARTIST
+        // ARTIST
         case 1:
         {
-            userNumOfAnswers ++;
+            countAnsweredQuestion ++;
             if ([song  isEqualToString:[currentItem valueForProperty:MPMediaItemPropertyArtist]]) {
                 
                 [self answerBeforeTheEndTime];
                 
                 [self.delegate correctAnsw];
-                self.totalScore = self.totalScore + self.score;
+                self.totalScore = self.totalScore + 10;
             }
             else{
                 [self answerBeforeTheEndTime];
                 
-                [self.delegate wrongAnsw];
-                self.totalScore = self.totalScore - self.score;
+                // Send to the delegate class the correct answer
+                NSString *correctAnswer = [currentItem valueForProperty:MPMediaItemPropertyArtist];
+                
+                //[self.delegate wrongAnsw];
+                [self.delegate wrongAnswerWithCorrectAnswer:correctAnswer];
+                self.totalScore = self.totalScore - 1;
             }
             
-        }
-            break;
+        } break;
             
-            // TITLE
+        // TITLE
         case 2:
             
         {
-            userNumOfAnswers ++;
+            countAnsweredQuestion ++;
             if ([song  isEqualToString:[currentItem valueForProperty:MPMediaItemPropertyTitle]]) {
                 [self answerBeforeTheEndTime];
                 
                 [self.delegate correctAnsw];
-                self.totalScore = self.totalScore + self.score;
+                self.totalScore = self.totalScore + 10;
             }
             else{
                 
                 [self answerBeforeTheEndTime];
                 
-                [self.delegate wrongAnsw];
-                self.totalScore = self.totalScore - self.score;
+                // Send to the delegate class the correct answer
+                NSString *correctAnswer = [currentItem valueForProperty:MPMediaItemPropertyTitle];
+                
+                [self.delegate wrongAnswerWithCorrectAnswer:correctAnswer];
+                self.totalScore = self.totalScore - 1;
             }
-        }
+        } break;
             
-            break;
-            
-            // ARTIST & TITLE
+        // ARTIST & TITLE
         case 3:
         {
-            int questionIndex = round - 1;
+            int questionIndex = currentRound - 1;
             
             if (tmpFlag != 1) {
                 if ([song isEqualToString:[currentItem valueForProperty:MPMediaItemPropertyArtist]]) {
                     
                     // If the user answers the artist correctly, it has to answer for the title too
                     // I send to the delegate class the titles of the songs
-                    [self.delegate playingRound:round WithSongs:[self getQuestionTitlesInStringAtIndex:questionIndex]];
+                    [self.delegate playingRound:currentRound WithSongs:[self getQuestionTitlesInStringAtIndex:questionIndex]];
                     // now that i sent the titles to the delegate class, I don't have to return in this area of code
                     // so I set "tmpFlag" to 1 and when the user answers the title I check the answer in another area of code,
                     // not here anymore. So I'm here only the user has to answer the correct artist of the song
@@ -203,21 +206,25 @@ int tmpFlag = 0;
                 }
             } else if ([song isEqualToString:[currentItem valueForProperty:MPMediaItemPropertyTitle]]) {
                 // If I'm in here, the user has answers the artist correctly. So here I check the title
-                userNumOfAnswers ++;
+                countAnsweredQuestion ++;
                 [self.delegate correctAnsw];
                 [self answerBeforeTheEndTime];
                 tmpFlag = 0;
-                self.totalScore = self.totalScore + self.score;
+                self.totalScore = self.totalScore + 10;
             } else {
-                userNumOfAnswers ++;
-                [self.delegate wrongAnsw];
+                countAnsweredQuestion ++;
+                
+                // Send to the delegate class the correct answer
+                NSString *correctAnswer = [currentItem valueForProperty:MPMediaItemPropertyTitle];
+                
+                [self.delegate wrongAnswerWithCorrectAnswer:correctAnswer];
                 [self answerBeforeTheEndTime];
                 tmpFlag = 0;
-                self.totalScore = self.totalScore - self.score;
+                self.totalScore = self.totalScore - 1;
             }
             
-        }
-            break;
+        } break;
+        
         default:
             break;
     }
@@ -251,7 +258,18 @@ int tmpFlag = 0;
  */
 -(void)next
 {
-    round ++;
+    if (!hasAnswerTheQuestion) {
+        if (self.type == 1) {
+            [self.delegate noAnswerWithCorrectAnswer:[currentItem valueForProperty:MPMediaItemPropertyArtist]];
+        } else if (self.type == 2) {
+            [self.delegate noAnswerWithCorrectAnswer:[currentItem valueForProperty:MPMediaItemPropertyTitle]];
+        } else {
+            [self.delegate noAnswerWithCorrectAnswer:[currentItem valueForProperty:MPMediaItemPropertyArtist]];
+        }
+    }
+    
+    hasAnswerTheQuestion = NO;
+    currentRound ++;
     [self resetSecondsVariable];
     [self.musicPlayer skipToNextItem];
 }
@@ -272,25 +290,25 @@ int tmpFlag = 0;
 
 -(void) handle_NowPlayingItemChanged: (id) notification
 {
-    int questionIndex = round - 1; // The question index starts from 0 while the round starts from 1
+    int questionIndex = currentRound - 1; // The question index starts from 0 while the round starts from 1
     currentItem = [self.musicPlayer nowPlayingItem];
     
     // I do this if clause 'cause the index for the "self.questions" array doesn't have to be greater
     // than the numberOfQuestion (because the array index starts from 0 while the rounds variable starts
     // from 1).
     
-    if (questionIndex < self.numberOfQuestion) {
+    if (questionIndex < self.numberOfQuestions) {
         if (self.type == 1) {
             // Artist
-            [self.delegate playingRound:round WithSongs:[self getQuestionArtistInStringAtIndex:questionIndex]];
+            [self.delegate playingRound:currentRound WithSongs:[self getQuestionArtistInStringAtIndex:questionIndex]];
         } else if (self.type == 2) {
             // Title
-            [self.delegate playingRound:round WithSongs:[self getQuestionTitlesInStringAtIndex:questionIndex]];
+            [self.delegate playingRound:currentRound WithSongs:[self getQuestionTitlesInStringAtIndex:questionIndex]];
         } else if (self.type == 3) {
             // Artist & Title
             // Sarebbe carino una volta cliccato sull'artista inserire solo titoli di canzoni relativi all'artista
             // tanto da rendere difficile la scelta da parte del giocatore.
-            [self.delegate playingRound:round WithSongs:[self getQuestionArtistInStringAtIndex:questionIndex]];
+            [self.delegate playingRound:currentRound WithSongs:[self getQuestionArtistInStringAtIndex:questionIndex]];
         }
     }
 }
@@ -316,9 +334,9 @@ int tmpFlag = 0;
         [nextSongTimer invalidate];
         nextSongTimer = nil;
         
-        [self.delegate matchFinished:userNumOfAnswers WithScore:self.totalScore];
+        [self.delegate matchFinished:countAnsweredQuestion WithScore:self.totalScore];
         
-        [self resetSecondsVariable];
+        //[self resetSecondsVariable];
     }
 }
 
