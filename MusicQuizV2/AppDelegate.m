@@ -28,6 +28,10 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:firstVC];
         [self.window setRootViewController:nav];
         
+        // Setting the inital values of the controls into a NSUserDefault object
+        [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:10] forKey:@"OptionNumberOfQuestion"];
+        [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:30] forKey:@"OptionQuestionDuration"];
+        
     } else {
         // It's not the first time the User Opens the App
         HomeViewController *homeVC = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];

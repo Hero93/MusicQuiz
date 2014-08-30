@@ -52,13 +52,15 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
-    quiz = nil;
-    
     currentRound = 0;
     
     answ = [[NSMutableArray alloc] init];
     
     // I take the values set in the option section
+    // IMPORTANT: The first time the app is executed, this value is not set !!
+    //            So I set the initial value into the appDelegate because if the
+    //            first time the user doesn't open the "Option" view the values
+    //            are not set.
     numberOfQuestionStoredValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"OptionNumberOfQuestion"];
     questionDurationStoredValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"OptionQuestionDuration"];
     
