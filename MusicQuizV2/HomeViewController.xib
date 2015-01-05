@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -14,36 +15,48 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZA-x0-0Ty">
-                    <rect key="frame" x="82" y="252" width="157" height="157"/>
-                    <state key="normal" title="Button" image="GiocaButton.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="beginGame:" destination="-1" eventType="touchUpInside" id="yVF-Z0-5Q0"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoApp.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aii-bQ-kNA">
-                    <rect key="frame" x="85" y="61" width="150" height="118"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_app" translatesAutoresizingMaskIntoConstraints="NO" id="Aii-bQ-kNA">
+                    <rect key="frame" x="85" y="61" width="150" height="117"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cb-Z0-RdX">
-                    <rect key="frame" x="262" y="509" width="38" height="39"/>
-                    <state key="normal" image="settings.png">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cb-Z0-RdX">
+                    <rect key="frame" x="260" y="508" width="40" height="40"/>
+                    <state key="normal" image="btn_settings">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="lauchOptions:" destination="-1" eventType="touchUpInside" id="1tp-8X-s08"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZA-x0-0Ty">
+                    <rect key="frame" x="82" y="258" width="157" height="157"/>
+                    <state key="normal" image="btn_gioca">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="beginGame:" destination="-1" eventType="touchUpInside" id="yVF-Z0-5Q0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <constraints>
+                <constraint firstItem="Aii-bQ-kNA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="85" id="9Ry-Ys-Hqt"/>
+                <constraint firstAttribute="trailing" secondItem="Aii-bQ-kNA" secondAttribute="trailing" constant="85" id="HH4-60-dSK"/>
+                <constraint firstAttribute="centerX" secondItem="LZA-x0-0Ty" secondAttribute="centerX" constant="-0.5" id="ccU-Vv-q1R"/>
+                <constraint firstItem="Aii-bQ-kNA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="ha5-2w-B4T"/>
+                <constraint firstAttribute="trailing" secondItem="0Cb-Z0-RdX" secondAttribute="trailing" constant="20" id="lHd-Qq-EPg"/>
+                <constraint firstAttribute="bottom" secondItem="0Cb-Z0-RdX" secondAttribute="bottom" constant="20" id="pVl-rM-gGp"/>
+                <constraint firstAttribute="centerY" secondItem="LZA-x0-0Ty" secondAttribute="centerY" constant="-52.5" id="vwc-Ay-ale"/>
+            </constraints>
         </view>
     </objects>
     <resources>
-        <image name="GiocaButton.png" width="314" height="314"/>
-        <image name="LogoApp.png" width="300" height="236"/>
-        <image name="settings.png" width="80" height="80"/>
+        <image name="btn_gioca" width="157" height="157"/>
+        <image name="btn_settings" width="40" height="40"/>
+        <image name="logo_app" width="150" height="117"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

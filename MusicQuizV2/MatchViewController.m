@@ -26,6 +26,7 @@
 @implementation MatchViewController
 
 # pragma mark - Init methods (Class Constructor)
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,9 +59,10 @@
     
     // I take the values set in the option section
     // IMPORTANT: The first time the app is executed, this value is not set !!
-    //            So I set the initial value into the appDelegate because if the
+    //            So I set the initial value in the appDelegate because if the
     //            first time the user doesn't open the "Option" view the values
     //            are not set.
+    
     numberOfQuestionStoredValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"OptionNumberOfQuestion"];
     questionDurationStoredValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"OptionQuestionDuration"];
     
@@ -70,35 +72,36 @@
     }
     
     // ---- LABELS ----
+    
     // Timer Label
     self.lblTimer.text = [NSString stringWithFormat:@"%d", quiz.questionDuration];
-    [self.lblTimer setFont:[UIFont lg_musicQuizFontRegularWithSize:41]];
+    [self.lblTimer setFont:[UIFont musicQuizFontRegularWithSize:41]];
     [self.lblTimer setTextColor:[UIColor musicQuizRed]];
     
     // Match Status Label
     //self.lblMbatchStatus.text = @"";
     
     // Round Label
-    [self.lblRound setFont:[UIFont lg_musicQuizFontBoldWithSize:28]];
+    [self.lblRound setFont:[UIFont musicQuizFontBoldWithSize:28]];
     [self.lblRound setTextColor:[UIColor whiteColor]];
     
     // Question Label
     self.lblQuestion.text = [quiz.questions[0] text];
-    [self.lblQuestion setFont:[UIFont lg_musicQuizFontRegularWithSize:28]];
+    [self.lblQuestion setFont:[UIFont musicQuizFontRegularWithSize:28]];
     [self.lblQuestion setTextColor:[UIColor whiteColor]];
     
     // Risposta Label
-    [self.lblRisposta setFont:[UIFont lg_musicQuizFontRegularWithSize:18]];
+    [self.lblRisposta setFont:[UIFont musicQuizFontRegularWithSize:18]];
     [self.lblRisposta setTextColor:[UIColor musicQuizRed]];
     [self.lblRisposta setHidden:YES];
     
     // Score Label
-    [self.lblScore setFont:[UIFont lg_musicQuizFontBoldWithSize:28]];
+    [self.lblScore setFont:[UIFont musicQuizFontBoldWithSize:28]];
     [self.lblScore setTextColor:[UIColor blackColor]];
     
     // ---- BUTTONS ----
     
-    [self setValue:[UIFont lg_musicQuizFontRegularWithSize:23] forKeyPath:@"btnAnswers.font"];
+    [self setValue:[UIFont musicQuizFontRegularWithSize:23] forKeyPath:@"btnAnswers.font"];
     
     for (UIButton *btn in self.btnAnswers) {
         btn.tintColor =  [UIColor musicQuizRed];
@@ -106,11 +109,14 @@
     
     // ---- IMG VIEW ----
 
-    [self.imgFace setImage:[UIImage imageNamed:@"faceNeutral"]];
+    [self.imgFace setImage:[UIImage imageNamed:@"face_neutral"]];
     
     for (int i=0; i<numberOfQuestionStoredValue; i++) {
-        [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnUnanswered.png"]];
+        [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_unanswered"]];
     }
+    
+    // ** Start the Quiz
+    
     [quiz startQuiz];
 }
 
@@ -120,6 +126,7 @@
 }
 
 #pragma mark - IBAction
+
 - (IBAction)replayMatch:(id)sender
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -137,6 +144,7 @@
 }
 
 #pragma mark - Music Quiz Deleate Methods
+
 -(void)updateTimer
 {
     self.lblTimer.text = [NSString stringWithFormat:@"%d", quiz.timeTick];
@@ -146,35 +154,32 @@
 {
     self.lblRisposta.textColor = [UIColor greenColor];
     self.lblRisposta.text = @"CORRETTA !";
-    [self.imgFace setImage:[UIImage imageNamed:@"faceHappy"]];
+    [self.imgFace setImage:[UIImage imageNamed:@"face_happy"]];
     
     // I put a green dot (right answer) for the current question
     for (int i=0; i<10; i++) {
         
         if ([self.imgStatus[i] tag] == currentRound) {
-            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnRightAnswer"]];
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_correct_answer"]];
         }
     }
     
     // If the user is correct the color of the UIButton is changed to green
     UIButton * btnCorrectAnsert = self.btnAnswers[currentAnswer];
     btnCorrectAnsert.tintColor = [UIColor greenColor];
-    
-
-    
 }
 
 -(void)wrongAnswerWithCorrectAnswer:(NSString *)correctAnswer
 {
     self.lblRisposta.textColor = [UIColor redColor];
     self.lblRisposta.text = @"SBAGLIATA :(";
-    [self.imgFace setImage:[UIImage imageNamed:@"faceSad"]];
+    [self.imgFace setImage:[UIImage imageNamed:@"face_sad"]];
     
     // I put a red dot (wrong answer) for the current question
     for (int i=0; i<10; i++) {
         
         if ([self.imgStatus[i] tag] == currentRound) {
-            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_wrong_answer"]];
         }
     }
     
@@ -192,7 +197,7 @@
     for (int i=0; i<10; i++) {
         
         if ([self.imgStatus[i] tag] == currentRound) {
-            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_wrong_answer"]];
         }
     }
     
@@ -231,7 +236,7 @@
     }
     
     [self.lblScore setText:[NSString stringWithFormat:@"%d", quiz.totalScore]];
-    [self.imgFace setImage:[UIImage imageNamed:@"faceNeutral"]];
+    [self.imgFace setImage:[UIImage imageNamed:@"face_neutral"]];
 }
 
 @end

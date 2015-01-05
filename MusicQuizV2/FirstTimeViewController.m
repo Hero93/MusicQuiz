@@ -40,15 +40,15 @@
     
     // ---- LABELS ----
     // Hi Label
-    [self.lblHi setFont:[UIFont lg_musicQuizFontRegularWithSize:28]];
+    [self.lblHi setFont:[UIFont musicQuizFontRegularWithSize:28]];
     self.lblHi.textColor = [UIColor musicQuizGray];
     self.lblHi.text = @"Hi !";
     
-    [self.txtName setFont:[UIFont lg_musicQuizFontBoldWithSize:28]];
+    [self.txtName setFont:[UIFont musicQuizFontBoldWithSize:28]];
     self.txtName.placeholder = @"Write here your name";
     self.txtName.textColor = [UIColor musicQuizRed];
     
-    self.btnReady.titleLabel.font = [UIFont lg_musicQuizFontRegularWithSize:23];
+    self.btnReady.titleLabel.font = [UIFont musicQuizFontRegularWithSize:23];
     self.btnReady.tintColor = [UIColor musicQuizRed];
     
     [self.btnReady setEnabled:NO];

@@ -10,7 +10,7 @@
 
 @interface UIFont (MusicQuiz)
 
-+ (id) lg_musicQuizFontRegularWithSize:(CGFloat) size;
-+ (id) lg_musicQuizFontBoldWithSize:(CGFloat) size;
++ (id) musicQuizFontRegularWithSize:(CGFloat) size;
++ (id) musicQuizFontBoldWithSize:(CGFloat) size;
 
 @end

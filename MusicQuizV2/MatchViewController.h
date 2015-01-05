@@ -15,13 +15,12 @@
 - (id)initWithQuizMode:(int)gameMode;
 
 @property (nonatomic, weak)     IBOutlet UILabel *lblQuestion;
-@property (nonatomic, weak)     IBOutlet UILabel *lblTimer;
 @property (weak, nonatomic)     IBOutlet UILabel *lblRound;
 @property (nonatomic, strong)   IBOutletCollection(UIButton) NSArray *btnAnswers;
 
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imgStatus;
 
-
+@property (weak, nonatomic) IBOutlet UILabel *lblTimer;
 @property (weak, nonatomic)     IBOutlet UILabel *lblRisposta;
 @property (weak, nonatomic)     IBOutlet UIImageView *imgFace;
 @property (weak, nonatomic)     IBOutlet UILabel *lblScore;

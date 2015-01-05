@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameModeViewController">
@@ -17,14 +18,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPl-Hh-abP">
-                    <rect key="frame" x="20" y="252" width="280" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPl-Hh-abP">
+                    <rect key="frame" x="89" y="247" width="141.5" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cit-L8-cg1">
-                    <rect key="frame" x="20" y="308" width="280" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cit-L8-cg1">
+                    <rect key="frame" x="98" y="301" width="123" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="Singleplayer">
                         <color key="titleColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,8 +35,8 @@
                         <action selector="playSingleplayer:" destination="-1" eventType="touchUpInside" id="Pn2-yU-ONs"/>
                     </connections>
                 </button>
-                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvo-sb-VIP">
-                    <rect key="frame" x="20" y="351" width="280" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvo-sb-VIP">
+                    <rect key="frame" x="105" y="355" width="110" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="Multiplayer">
                         <color key="titleColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,16 +46,31 @@
                         <action selector="playMultiplayer:" destination="-1" eventType="touchUpInside" id="bZ8-Qw-9Bu"/>
                     </connections>
                 </button>
-                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo3.png" translatesAutoresizingMaskIntoConstraints="NO" id="KDN-bU-Dne">
-                    <rect key="frame" x="85" y="67" width="149" height="149"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo4" translatesAutoresizingMaskIntoConstraints="NO" id="KDN-bU-Dne">
+                    <rect key="frame" x="99" y="61" width="120" height="120"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <constraints>
+                <constraint firstItem="KDN-bU-Dne" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="30J-qH-fi5"/>
+                <constraint firstItem="nvo-sb-VIP" firstAttribute="top" secondItem="cit-L8-cg1" secondAttribute="bottom" constant="14" id="GxE-6C-Auu"/>
+                <constraint firstItem="KDN-bU-Dne" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="99" id="THf-3H-pf8"/>
+                <constraint firstAttribute="centerX" secondItem="EPl-Hh-abP" secondAttribute="centerX" constant="0.25" id="aMh-53-ube"/>
+                <constraint firstAttribute="centerX" secondItem="nvo-sb-VIP" secondAttribute="centerX" id="ceJ-l8-92S"/>
+                <constraint firstAttribute="centerY" secondItem="EPl-Hh-abP" secondAttribute="centerY" constant="22" id="d54-Pa-3Qv"/>
+                <constraint firstAttribute="trailing" secondItem="KDN-bU-Dne" secondAttribute="trailing" constant="101" id="dC2-h6-PDU"/>
+                <constraint firstItem="cit-L8-cg1" firstAttribute="top" secondItem="EPl-Hh-abP" secondAttribute="bottom" constant="23.5" id="spT-8g-qLf"/>
+                <constraint firstItem="EPl-Hh-abP" firstAttribute="leading" secondItem="cit-L8-cg1" secondAttribute="leading" constant="-9" id="yaw-DP-QBQ"/>
+                <constraint firstAttribute="centerX" secondItem="cit-L8-cg1" secondAttribute="centerX" constant="0.5" id="yxX-pL-Xfs"/>
+            </constraints>
         </view>
     </objects>
     <resources>
-        <image name="logo3.png" width="300" height="300"/>
+        <image name="logo4" width="120" height="120"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

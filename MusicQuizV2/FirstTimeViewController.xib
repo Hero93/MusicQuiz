@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstTimeViewController">
@@ -18,22 +18,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo3.png" translatesAutoresizingMaskIntoConstraints="NO" id="ty7-EW-56d">
-                    <rect key="frame" x="100" y="66" width="120" height="120"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo3" translatesAutoresizingMaskIntoConstraints="NO" id="ty7-EW-56d">
+                    <rect key="frame" x="90" y="58" width="140" height="120"/>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Inserisci il tuo Nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Igs-mg-R6C">
-                    <rect key="frame" x="20" y="287" width="280" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Inserisci il tuo Nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Igs-mg-R6C">
+                    <rect key="frame" x="34" y="294" width="251.5" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ciao !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dr-KH-cUu">
-                    <rect key="frame" x="20" y="231" width="280" height="26"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1k-rk-rLv">
-                    <rect key="frame" x="20" y="486" width="280" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1k-rk-rLv">
+                    <rect key="frame" x="20" y="478" width="280" height="38"/>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <state key="normal" title="Sono Pronto !">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,13 +36,35 @@
                         <action selector="takeMeToTheGameMode:" destination="-1" eventType="touchUpInside" id="nUX-c5-zZd"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ciao !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dr-KH-cUu">
+                    <rect key="frame" x="124" y="253" width="71" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Y1k-rk-rLv" secondAttribute="trailing" constant="20" id="7ao-K9-xwp"/>
+                <constraint firstAttribute="centerX" secondItem="Igs-mg-R6C" secondAttribute="centerX" id="Cp4-AW-ZG0"/>
+                <constraint firstItem="ty7-EW-56d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="90" id="Ju0-az-mXz"/>
+                <constraint firstAttribute="centerY" secondItem="4Dr-KH-cUu" secondAttribute="centerY" constant="14.25" id="KdV-ks-a4q"/>
+                <constraint firstAttribute="centerX" secondItem="4Dr-KH-cUu" secondAttribute="centerX" id="NR5-Uk-Ffe"/>
+                <constraint firstAttribute="trailing" secondItem="ty7-EW-56d" secondAttribute="trailing" constant="90" id="SPQ-7p-JJ9"/>
+                <constraint firstAttribute="bottom" secondItem="Y1k-rk-rLv" secondAttribute="bottom" constant="52" id="TFE-KQ-yN4"/>
+                <constraint firstAttribute="centerY" secondItem="Igs-mg-R6C" secondAttribute="centerY" constant="-27" id="jDq-wQ-cJa"/>
+                <constraint firstItem="ty7-EW-56d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="58" id="vNZ-NP-g5O"/>
+                <constraint firstItem="Y1k-rk-rLv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xWg-5X-xX8"/>
+            </constraints>
+            <point key="canvasLocation" x="258" y="317"/>
         </view>
     </objects>
     <resources>
-        <image name="logo3.png" width="300" height="300"/>
+        <image name="logo3" width="120" height="120"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

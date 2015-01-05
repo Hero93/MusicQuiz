@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EndMatchViewController">
@@ -18,8 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXH-ZU-ApS">
-                    <rect key="frame" x="20" y="279" width="280" height="46"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXH-ZU-ApS">
+                    <rect key="frame" x="103" y="279" width="113" height="46"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <state key="normal" title="RIGIOCA">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,8 +30,8 @@
                         <action selector="replayMatch:" destination="-1" eventType="touchUpInside" id="UuC-1v-etH"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPk-O8-sbY">
-                    <rect key="frame" x="20" y="518" width="280" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPk-O8-sbY">
+                    <rect key="frame" x="105" y="518" width="109" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Torna al Menù">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,28 +41,44 @@
                         <action selector="backToHomeMenu:" destination="-1" eventType="touchUpInside" id="Kit-mW-BJc"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hey, Luca !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-7o-Wte">
-                    <rect key="frame" x="20" y="142" width="280" height="29"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Hey, Luca !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-7o-Wte">
+                    <rect key="frame" x="92" y="137" width="135.5" height="44"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Scored N Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGx-nk-FjL">
-                    <rect key="frame" x="20" y="189" width="280" height="30"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Scored N Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGx-nk-FjL">
+                    <rect key="frame" x="47" y="189" width="225.5" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="note.png" translatesAutoresizingMaskIntoConstraints="NO" id="TNr-ah-Mes">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="TNr-ah-Mes">
                     <rect key="frame" x="145" y="80" width="31" height="37"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="AGx-nk-FjL" secondAttribute="centerY" constant="80" id="71T-Ul-4ns"/>
+                <constraint firstAttribute="centerY" secondItem="Vne-7o-Wte" secondAttribute="centerY" constant="125" id="83q-sS-eA9"/>
+                <constraint firstAttribute="centerX" secondItem="Vne-7o-Wte" secondAttribute="centerX" id="BxL-Wo-iYU"/>
+                <constraint firstAttribute="centerY" secondItem="TNr-ah-Mes" secondAttribute="centerY" constant="185.5" id="C2c-lW-7KI"/>
+                <constraint firstAttribute="centerX" secondItem="TNr-ah-Mes" secondAttribute="centerX" constant="-0.5" id="UFG-x0-OGs"/>
+                <constraint firstAttribute="bottom" secondItem="kPk-O8-sbY" secondAttribute="bottom" constant="20" id="aTE-Ff-2St"/>
+                <constraint firstAttribute="centerX" secondItem="kPk-O8-sbY" secondAttribute="centerX" id="ikt-hc-VR2"/>
+                <constraint firstItem="Vne-7o-Wte" firstAttribute="top" secondItem="TNr-ah-Mes" secondAttribute="bottom" constant="20" id="lwm-DX-HRu"/>
+                <constraint firstAttribute="centerX" secondItem="WXH-ZU-ApS" secondAttribute="centerX" id="pta-of-XUo"/>
+                <constraint firstAttribute="centerY" secondItem="WXH-ZU-ApS" secondAttribute="centerY" constant="-18" id="vDZ-8x-7YT"/>
+                <constraint firstAttribute="centerX" secondItem="AGx-nk-FjL" secondAttribute="centerX" id="w3L-dU-zuO"/>
+            </constraints>
         </view>
     </objects>
     <resources>
-        <image name="note.png" width="58" height="71"/>
+        <image name="note" width="31" height="37"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

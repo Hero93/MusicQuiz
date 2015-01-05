@@ -38,19 +38,19 @@
     // ---- BUTTONS ----
     
     // Replay Button
-    self.btnReplay.titleLabel.font = [UIFont lg_musicQuizFontBoldWithSize:28];
+    self.btnReplay.titleLabel.font = [UIFont musicQuizFontBoldWithSize:28];
     // BackToMenu Button
-    self.btnBackToHomeMenu.titleLabel.font = [UIFont lg_musicQuizFontRegularWithSize:17];
+    self.btnBackToHomeMenu.titleLabel.font = [UIFont musicQuizFontRegularWithSize:17];
 
     // ---- LABELS ----
 
     // Total Score Label
     self.lblTotalScore.text = [NSString stringWithFormat:@"You Scored %d Points", self.matchScore];
-    [self.lblTotalScore setFont:[UIFont lg_musicQuizFontBoldWithSize:25]];
+    [self.lblTotalScore setFont:[UIFont musicQuizFontBoldWithSize:25]];
     
     // Hey Player Label
     self.lblHeyPlayer.text = [NSString stringWithFormat:@"Hey, %@ !", [[NSUserDefaults standardUserDefaults] stringForKey:@"UserName"]];
-    [self.lblHeyPlayer setFont:[UIFont lg_musicQuizFontBoldWithSize:28]];
+    [self.lblHeyPlayer setFont:[UIFont musicQuizFontBoldWithSize:28]];
 }
 
 - (void)didReceiveMemoryWarning

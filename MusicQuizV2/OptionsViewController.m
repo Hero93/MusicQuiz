@@ -46,9 +46,9 @@
         [self.lblQuestionDuration setText:[NSString stringWithFormat:@"%d Seconds", (int)self.sliderQuestionDuration.value]];
     }
     
-    [self.lblQuestionDuration setFont:[UIFont lg_musicQuizFontRegularWithSize:18]];
+    [self.lblQuestionDuration setFont:[UIFont musicQuizFontRegularWithSize:18]];
     self.lblQuestionDuration.textColor = [UIColor musicQuizRed];
-    [self.lblNumberOfQuestions setFont:[UIFont lg_musicQuizFontRegularWithSize:18]];
+    [self.lblNumberOfQuestions setFont:[UIFont musicQuizFontRegularWithSize:18]];
     self.lblNumberOfQuestions.textColor = [UIColor musicQuizRed];
 }
 

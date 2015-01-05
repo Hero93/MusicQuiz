@@ -10,12 +10,12 @@
 
 @implementation UIFont (MusicQuiz)
 
-+ (id) lg_musicQuizFontRegularWithSize:(CGFloat) size
++ (id) musicQuizFontRegularWithSize:(CGFloat) size
 {
     return [UIFont fontWithName:@"Montserrat-Regular" size:size];
 }
 
-+ (id) lg_musicQuizFontBoldWithSize:(CGFloat)size
++ (id) musicQuizFontBoldWithSize:(CGFloat)size
 {
     return [UIFont fontWithName:@"Montserrat-Bold" size:size];
 }

@@ -33,14 +33,14 @@
 {
     [super viewDidLoad];
     
-    [self.lblGameMode setFont:[UIFont lg_musicQuizFontBoldWithSize:25]];
+    [self.lblGameMode setFont:[UIFont musicQuizFontBoldWithSize:25]];
     self.lblGameMode.textColor = [UIColor musicQuizGray];
     self.lblGameMode.text = @"Game Mode";
     
-    self.btnSinglePlayer.titleLabel.font = [UIFont lg_musicQuizFontRegularWithSize:23];
+    self.btnSinglePlayer.titleLabel.font = [UIFont musicQuizFontRegularWithSize:23];
     self.btnSinglePlayer.tintColor = [UIColor musicQuizRed];
     
-    self.btnMultiPlayer.titleLabel.font = [UIFont lg_musicQuizFontRegularWithSize:23];
+    self.btnMultiPlayer.titleLabel.font = [UIFont musicQuizFontRegularWithSize:23];
     self.btnMultiPlayer.tintColor = [UIColor musicQuizRed];
     
     [self setBackButton];
@@ -49,7 +49,7 @@
 - (void)setBackButton
 {
     UIButton *backButton =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setImage:[UIImage imageNamed:@"btnBack2.png"] forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"btn_back2"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [backButton setFrame:CGRectMake(10, 25, 19, 32)];
     

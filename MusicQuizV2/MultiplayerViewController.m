@@ -51,19 +51,19 @@
     
     // ---- LABELS ----
     // Current Round Label
-    [self.lblCurrentRound setFont:[UIFont lg_musicQuizFontBoldWithSize:28]];
+    [self.lblCurrentRound setFont:[UIFont musicQuizFontBoldWithSize:28]];
     [self.lblCurrentRound setTextColor:[UIColor whiteColor]];
     
     // Timer Label
-    [self.lblTimer setFont:[UIFont lg_musicQuizFontRegularWithSize:41]];
+    [self.lblTimer setFont:[UIFont musicQuizFontRegularWithSize:41]];
     [self.lblTimer setTextColor:[UIColor musicQuizRed]];
     
     // Question Label
-    [self.lblQuestion setFont:[UIFont lg_musicQuizFontBoldWithSize:28]];
+    [self.lblQuestion setFont:[UIFont musicQuizFontBoldWithSize:28]];
     [self.lblQuestion setTextColor:[UIColor whiteColor]];
     
     // ---- BUTTONS ----
-    [self setValue:[UIFont lg_musicQuizFontRegularWithSize:23] forKeyPath:@"btnAnswers.font"];
+    [self setValue:[UIFont musicQuizFontRegularWithSize:23] forKeyPath:@"btnAnswers.font"];
     
     for (UIButton *btn in self.btnAnswers) {
         btn.tintColor =  [UIColor musicQuizRed];
@@ -156,7 +156,7 @@
             // Setting the Status Images
             
             for (int i=0; i<[[receivedData valueForKey:@"numOfQuestions"]intValue]; i++) {
-                [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnUnanswered.png"]];
+                [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_unanswered"]];
             }
         }
         
@@ -213,7 +213,7 @@
             for (int i=0; i<10; i++) {
                 
                 if ([self.imgStatus[i] tag] == self.currentRound) {
-                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnRightAnswer"]];
+                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_correct_answer"]];
                 }
             }
             
@@ -223,7 +223,7 @@
             for (int i=0; i<10; i++) {
                 
                 if ([self.imgStatus[i] tag] == self.currentRound) {
-                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_wrong_answer"]];
                 }
             }
             
@@ -234,7 +234,7 @@
             for (int i=0; i<10; i++) {
                 
                 if ([self.imgStatus[i] tag] == self.currentRound) {
-                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+                    [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_wrong_answer"]];
                 }
             }
             
@@ -283,7 +283,7 @@
             
             // Setting the Status Images
             for (int i=0; i<self.numberOfQuestionStoredValue; i++) {
-                [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnUnanswered.png"]];
+                [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_unanswered"]];
             }
             
             // Send to the other players that the game has started
@@ -418,7 +418,7 @@
     for (int i=0; i<10; i++) {
         
         if ([self.imgStatus[i] tag] == self.currentRound) {
-            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_wrong_answer"]];
         }
     }
     
@@ -438,7 +438,7 @@
     for (int i=0; i<10; i++) {
         
         if ([self.imgStatus[i] tag] == self.currentRound) {
-            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnWrong"]];
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_wrong_answer"]];
         }
     }
     
@@ -461,7 +461,7 @@
     for (int i=0; i<10; i++) {
         
         if ([self.imgStatus[i] tag] == self.currentRound) {
-            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btnRightAnswer"]];
+            [self.imgStatus[i] setImage:[UIImage imageNamed:@"btn_correct_answer"]];
         }
     }
     

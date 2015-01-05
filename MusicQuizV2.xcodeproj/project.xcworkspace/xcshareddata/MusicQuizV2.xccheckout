@@ -10,31 +10,31 @@
 	<string>MusicQuizV2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C31BF7AF-5F3E-4C58-BE13-81EB28F5F549</key>
+		<key>0302E8DA5693649EBF35355AFEBFC733ACD22A1B</key>
 		<string>https://github.com/Hero93/MusicQuiz.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MusicQuizV2.xcodeproj/project.xcworkspace</string>
+	<string>MusicQuizV2.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C31BF7AF-5F3E-4C58-BE13-81EB28F5F549</key>
+		<key>0302E8DA5693649EBF35355AFEBFC733ACD22A1B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Hero93/MusicQuiz.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C31BF7AF-5F3E-4C58-BE13-81EB28F5F549</string>
+	<string>0302E8DA5693649EBF35355AFEBFC733ACD22A1B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C31BF7AF-5F3E-4C58-BE13-81EB28F5F549</string>
+			<string>0302E8DA5693649EBF35355AFEBFC733ACD22A1B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MusicQuizV2</string>
+			<string>MusicQuizV3</string>
 		</dict>
 	</array>
 </dict>
