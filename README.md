@@ -1,2 +1,5 @@
 # MusicQuiz
-Music Quiz based on the songs on your device. Offline Multiplayer built with Apple "Multipeer Connectivity Framework"
+Offline multiplayer quiz game based on songs on your device.
+You can know test your knowledge on your friends' favorite tunes.
+
+This game is built with Apple "Multipeer Connectivity" that uses Wi-Fi networks, peer-to-peer Wi-Fi, and Bluetooth personal area networks to connect between devices.
